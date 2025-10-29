@@ -11,5 +11,18 @@ public class Inventario {
         inventario = new ArrayList<>();
     }
 
+    public ArrayList<Items> getInventario() {
+        return inventario;
+    }
 
+    public boolean contieneItem(String nombre) {
+        return inventario.stream().anyMatch(d -> d.getNombre().equals(nombre));
+    }
+
+    public void agregarItem(Items item) {
+        inventario.add(item);
+    }
+    public void mostrarInventario() {
+        inventario.stream().forEach(System.out::println);
+    }
 }
