@@ -1,0 +1,63 @@
+[
+  {
+    "nombre": "Candelabro",
+    "dialogo": "Este candelabro es bastante pesado. Podría haber sido utilizado para golpear a alguien con bastante fuerza. Al examinarlo con la lupa descubres que ha sido cogido por alguien, pero no se ve ninguna pista más.",
+    "tipo": "ARMA"
+  },
+  {
+    "nombre": "Cuchillo",
+    "dialogo": "Este cuchillo está afilado como una navaja. Podría haber sido utilizado para apuñalar a alguien. Al examinarlo con la lupa descubres que tiene las huellas del coronel Rubio.",
+    "tipo": "ARMA"
+  },
+  {
+    "nombre": "Tubería",
+    "dialogo": "Esta tubería parece haber sido utilizada recientemente. Podría haber dejado marcas en la víctima. Al examinarla con la lupa descubres que tiene huellas de tierra del invernadero.",
+    "tipo": "ARMA"
+  },
+  {
+    "nombre": "Cuerda",
+    "dialogo": "Esta cuerda es fuerte y resistente, pero algo gastada. Al examinarla con la lupa descubres que tiene un trozo de uña roja.",
+    "tipo": "ARMA"
+  },
+  {
+    "nombre": "Revólver",
+    "dialogo": "Este revólver está cargado. Al examinarlo con la lupa descubres que no ha sido disparado, pero al ser muy viejo no encuentras nada más.",
+    "tipo": "ARMA"
+  },
+  {
+    "nombre": "Veneno",
+    "dialogo": "Podría haber sido administrado en la comida o bebida de la víctima. Al examinarlo con la lupa descubres que el frasco está intacto, parece nuevo.",
+    "tipo": "ARMA"
+  },
+  {
+    "nombre": "Rubio",
+    "dialogo": "Soy un militar experimentado que ha querido tomarse un descanso y disfrutar de la vida. Durante el apagón, me encontraba en la sala de billar con la señorita Orquídea. Todo se oscureció de repente y escuché un fuerte ruido.",
+    "tipo": "PERSONAJE"
+  },
+  {
+    "nombre": "Profesor Mora",
+    "dialogo": "Me encontraba en el sótano, hablando con Amapola sobre lo que nos dijo el señor Black. El ruido me sobresaltó y no supe qué hacer. Nos escondimos por el susto del apagón.",
+    "tipo": "PERSONAJE"
+  },
+  {
+    "nombre": "Orquídea",
+    "dialogo": "Estaba en la sala de billar con el coronel Rubio. El ruido nos sobresaltó a ambos y todo se puso oscuro. No vi nada sospechoso, pero el coronel tomó un par de cuchillos antes del apagón en la cocina.",
+    "tipo": "PERSONAJE"
+  },
+  {
+    "nombre": "Amapola",
+    "dialogo": "¡Estaba en el sótano con el profesor Mora! El ruido nos asustó y salimos corriendo. Vi una sombra moverse, pero desapareció en un segundo entre la oscuridad.",
+    "tipo": "PERSONAJE"
+  },
+  {
+    "nombre": "Prado",
+    "dialogo": "Me encontraba en el salón, leyendo un libro. El ruido me sobresaltó y, cuando intenté encender la luz, nada funcionó. Vi a la señora Celeste en la cocina, y unas marcas de arrastre extrañas en la alfombra del invernadero que iban hacia el estudio.",
+    "tipo": "PERSONAJE"
+  },
+  {
+    "nombre": "Celeste",
+    "dialogo": "Estaba en la cocina, preparando una taza de té. El ruido me sobresaltó y, cuando intenté encender la luz, todo se puso oscuro. Vi al padre Pedro en el salón, parecía confundido.",
+    "tipo": "PERSONAJE"
+  }
+]
+

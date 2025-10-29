@@ -1,12 +1,14 @@
 package org.example.Objetos;
 
-public abstract class Items {
+public class Descripcion {
     private String nombre;
     private String descripcion;
+    private Tipo tipo;
 
-    public Items(String nombre) {
+    public Descripcion(String nombre, String descripcion, Tipo tipo) {
         this.nombre = nombre;
-        this.descripcion = Descripciones.getDescripciones().stream().filter(d -> d.getNombre().equals(nombre)).findFirst().get().getDescripcion();
+        this.descripcion = descripcion;
+        this.tipo = tipo;
     }
     public String getNombre() {
         return nombre;
@@ -19,5 +21,11 @@ public abstract class Items {
     }
     public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
+    }
+    public Tipo getTipo() {
+        return tipo;
+    }
+    public void setTipo(Tipo tipo) {
+        this.tipo = tipo;
     }
 }

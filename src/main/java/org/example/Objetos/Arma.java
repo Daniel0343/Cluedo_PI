@@ -1,4 +1,4 @@
 package org.example.Objetos;
 
-public class Armas {
+public class Arma {
 }
