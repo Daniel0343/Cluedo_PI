@@ -2,11 +2,11 @@ package org.example.BaseDatos;
 
 public class Puntuacion {
     private Usuario usuario;
-    private int tiempo;
+    private int puntuacion;
 
-    public  Puntuacion(Usuario usuario, int tiempo) {
+    public  Puntuacion(Usuario usuario, int puntuacion) {
         this.usuario = usuario;
-        this.tiempo = tiempo;
+        this.puntuacion = puntuacion;
     }
 
     public void subirPuntuacion(){
@@ -16,7 +16,7 @@ public class Puntuacion {
     public String getNombre(){
         return usuario.getNombre();
     }
-    public int getTiempo(){
-        return tiempo;
+    public int getPuntuacion(){
+        return puntuacion;
     }
 }
