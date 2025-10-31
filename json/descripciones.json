@@ -1,0 +1,77 @@
+[
+  {
+    "nombre": "Linterna",
+    "descripcion": "Proporciona luz en zonas oscuras.",
+    "tipo": "OBJETO"
+  },
+  {
+    "nombre": "Lupa",
+    "descripcion": "Permite ver detalles y huellas ocultas.",
+    "tipo": "OBJETO"
+  },
+  {
+    "nombre": "Llave Triangular",
+    "descripcion": "Abre la caja de fusibles.",
+    "tipo": "OBJETO"
+  },
+  {
+    "nombre": "Diarios y Cartas",
+    "descripcion": "Revelan secretos y pistas importantes.",
+    "tipo": "OBJETO"
+  },
+  {
+    "nombre": "Plantas Raras",
+    "descripcion": "Usadas en el puzzle del invernadero.",
+    "tipo": "OBJETO"
+  },
+  {
+    "nombre": "Tacos y Bolas de Billar",
+    "descripcion": "Necesarios para resolver el puzzle del billar.",
+    "tipo": "OBJETO"
+  },
+  {
+    "nombre": "Ingredientes y Utensilios",
+    "descripcion": "Utilizados en el puzzle de la cocina.",
+    "tipo": "OBJETO"
+  },
+  {
+    "nombre": "Anillo Rojo",
+    "descripcion": "Anillo de mujer hallado en el salón.",
+    "tipo": "OBJETO"
+  },
+  {
+    "nombre": "Pluma",
+    "descripcion": "Pluma atrapada en la estatua del estudio.",
+    "tipo": "OBJETO"
+  },
+  {
+    "nombre": "Candelabro",
+    "descripcion": "Pesado, podría haber golpeado a la víctima.",
+    "tipo": "ARMA"
+  },
+  {
+    "nombre": "Cuchillo",
+    "descripcion": "Afilado; tiene huellas del coronel rubio.",
+    "tipo": "ARMA"
+  },
+  {
+    "nombre": "Tubería",
+    "descripcion": "Tiene tierra del invernadero; usada recientemente.",
+    "tipo": "ARMA"
+  },
+  {
+    "nombre": "Cuerda",
+    "descripcion": "Gastada, con un trozo de uña roja.",
+    "tipo": "ARMA"
+  },
+  {
+    "nombre": "Revólver",
+    "descripcion": "Viejo y cargado, sin disparar.",
+    "tipo": "ARMA"
+  },
+  {
+    "nombre": "Veneno",
+    "descripcion": "Nuevo, parece no haber sido usado.",
+    "tipo": "ARMA"
+  }
+]
