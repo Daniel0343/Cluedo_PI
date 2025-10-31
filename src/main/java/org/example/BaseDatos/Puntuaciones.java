@@ -11,7 +11,7 @@ public class Puntuaciones {
 
 
         puntuaciones.forEach(p -> {
-            System.out.println("Usuario: "+p.getNombre()+" Tiempo: "+p.getPuntuacion());
+            System.out.println("Usuario: "+p.getNombre()+" Tiempo: "+p.getTiempo());
         });
     }
 
