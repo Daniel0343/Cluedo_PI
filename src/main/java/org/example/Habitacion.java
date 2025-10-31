@@ -25,17 +25,9 @@ public class Habitacion {
     }
 
 
-    public void acciones(){
-        System.out.println("¿Que quieres hacer en " + this.nombre +"?   |  PRUEBA (1,2)");
-        int opcion = Escaner.entero();
-        if (opcion == 1) {
-            System.out.println("ACCIONES");
-        }else if (opcion == 2) {
-            movimiento(this);
-        }
-    }
 
-    public Habitacion movimiento(Habitacion actual){
+
+    public Habitacion movimiento(){
         System.out.println("Donde quieres ir?");
         int i = 1;
             for (Habitacion habitacion : accesos){
@@ -46,10 +38,10 @@ public class Habitacion {
         if (opcion > 0 && opcion <= accesos.length) {
             return accesos[opcion - 1];
         } else if (opcion == 0) {
-            return actual;
+            return this;
         }
         System.out.println("Has introducido información herronea, no te mueves");
-        return actual;
+        return this;
     }
 
     public static Habitacion[] crearInfo(){
