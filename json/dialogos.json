@@ -31,32 +31,38 @@
   },
   {
     "nombre": "Rubio",
-    "dialogo": "Soy un militar experimentado que ha querido tomarse un descanso y disfrutar de la vida. Durante el apagón, me encontraba en la sala de billar con la señorita Orquídea. Todo se oscureció de repente y escuché un fuerte ruido.",
+    "dialogo": "Soy un militar experimentado que ha adquirido un buen criterio de lo que hay que hacer sin dejar cabos sueltos, últimamente he querido dejar un tiempo libre y disfrutar cosas buenas de la vida",
+    "diaglogo 2": "Me encontraba antes del apagón cuando nos dejó irnos de la sala el SR. Black, estaba buscando una manera de poder divertirme de alguna manera, vi unos cuchillos en la cocina y me pareció una buena idea utilizarlos de dardos en la diana, no vi nada que fuese sospechoso en la sala de billar y eso que tengo bastantes años de experiencia. ",
     "tipo": "PERSONAJE"
   },
   {
     "nombre": "Profesor Mora",
-    "dialogo": "Me encontraba en el sótano, hablando con Amapola sobre lo que nos dijo el señor Black. El ruido me sobresaltó y no supe qué hacer. Nos escondimos por el susto del apagón.",
+    "dialogo": "Soy profesor de la universidad más importante de este país, estoy investigando ahora un proyecto que puede cambiar el mundo, pero necesito la ayuda del Sr. Black porque necesito una buena cantidad de dinero de inversión para poder lograr mi objetivo. ",
+    "dialogo 2": "Me encontraba en el vestibulo, hablando con Amapola sobre lo que nos dijo el señor Black. El ruido me sobresaltó y no supe qué hacer. Nos escondimos por el susto del apagón en sotano.",
     "tipo": "PERSONAJE"
   },
   {
     "nombre": "Orquídea",
-    "dialogo": "Estaba en la sala de billar con el coronel Rubio. El ruido nos sobresaltó a ambos y todo se puso oscuro. No vi nada sospechoso, pero el coronel tomó un par de cuchillos antes del apagón en la cocina.",
+    "dialogo": "Soy una de las expertas en botánica más preparada del mundo puedo hacer cosas con las pantas que no creerías, tengo mucho que compartir con el mundo, pero debe permanecer en secreto hasta que esté todo listo ",
+    "dialogo 2": "Estabamos en la sala de billar con el coronel Rubio. El ruido nos sobresaltó a ambos y todo se puso oscuro. No vi nada sospechoso, pero el coronel tomó un par de cuchillos antes del apagón en la cocina.",
     "tipo": "PERSONAJE"
   },
   {
     "nombre": "Amapola",
-    "dialogo": "¡Estaba en el sótano con el profesor Mora! El ruido nos asustó y salimos corriendo. Vi una sombra moverse, pero desapareció en un segundo entre la oscuridad.",
+    "dialogo": "Soy una aspirante actriz que busca ser el centro de atención, voy a ser una estrella cariño y no dejare que nadie ni nada se interponga en mi camino, así es el mundo del espectáculo ",
+    "dialogo 2": "¡Salí del vestibulo al sótano con el profesor Mora! El ruido nos asustó y salimos corriendo. Vi una sombra moverse, pero desapareció en un segundo entre la oscuridad.",
     "tipo": "PERSONAJE"
   },
   {
     "nombre": "Prado",
-    "dialogo": "Me encontraba en el salón, leyendo un libro. El ruido me sobresaltó y, cuando intenté encender la luz, nada funcionó. Vi a la señora Celeste en la cocina, y unas marcas de arrastre extrañas en la alfombra del invernadero que iban hacia el estudio.",
+    "dialogo": "No soy un estafador los estafadores acaban siendo pillados, soy un hombre de negocios que comercia con una gran variedad de productos, toma mi tarjeta llámame si necesitas algo, confía en mí. ",
+    "dialogo 2": "Me encontraba en el salón, leyendo un libro. El ruido me sobresaltó y, cuando intenté encender la luz, nada funcionó. Vi a la señora Celeste en la cocina, y unas marcas de arrastre extrañas en la alfombra del invernadero que iban hacia el estudio.",
     "tipo": "PERSONAJE"
   },
   {
     "nombre": "Celeste",
-    "dialogo": "Estaba en la cocina, preparando una taza de té. El ruido me sobresaltó y, cuando intenté encender la luz, todo se puso oscuro. Vi al padre Pedro en el salón, parecía confundido.",
+    "dialogo": "Estoy aquí para formar una conexión para toda la vida, mi último matrimonio me ha dejado un montón de dinero y el anterior también pero el dinero no es lo que me hará feliz otra oportunidad en el amor lo hará ",
+    "dialogo 2": "Estaba en la cocina, preparando una taza de té. El ruido me sobresaltó y, cuando intenté encender la luz, todo se puso oscuro. Vi al padre Pedro en el salón, parecía confundido.",
     "tipo": "PERSONAJE"
   }
 ]
