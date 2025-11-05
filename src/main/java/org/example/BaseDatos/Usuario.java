@@ -3,10 +3,6 @@ package org.example.BaseDatos;
 import java.sql.*;
 
 public class Usuario {
-    private String nombre;
-    private String contrasena;
-
-
 
     public static boolean comprobarUsuario(String nombre) {
         //Consultar en la base de datos si existe el usuario

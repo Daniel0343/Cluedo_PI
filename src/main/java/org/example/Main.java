@@ -40,8 +40,7 @@ public class Main {
             System.out.print("Introduce tu contraseña: ");
             String pass = sc.nextLine();
 
-            usuario = new Usuario(nombre, pass);
-            if (usuario.validarUsuario()) {
+            if (usuario.validarUsuario(nombre, pass)) {
                 System.out.println("Usuario validado correctamente. ¡Bienvenido, " + nombre + "!");
             } else {
                 System.out.println("Usuario o contraseña incorrectos. Saliendo...");
@@ -55,8 +54,7 @@ public class Main {
             System.out.print("Introduce una contraseña: ");
             String pass = sc.nextLine();
 
-            usuario = new Usuario(nombre, pass);
-            usuario.crearUsuario();
+            usuario.crearUsuario(nombre, pass);
             System.out.println("Usuario creado correctamente.");
         }
 
