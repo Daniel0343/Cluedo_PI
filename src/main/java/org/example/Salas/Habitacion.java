@@ -4,7 +4,7 @@ import org.example.Escaner;
 
 import java.util.ArrayList;
 
-public class Habitacion {
+public abstract class Habitacion {
     String nombre;
     ArrayList<Object> opciones;
     Habitacion [] accesos;
@@ -43,35 +43,17 @@ public class Habitacion {
         return opciones;
     }
 
-
-
-
-    public Habitacion movimiento(){
-        System.out.println("Donde quieres ir?");
-        int i = 1;
-            for (Habitacion habitacion : accesos){
-                System.out.println(i + " - " + habitacion.nombre);
-                i++;
-            }
-        int opcion = Escaner.entero();
-        if (opcion > 0 && opcion <= accesos.length) {
-            return accesos[opcion - 1];
-        } else if (opcion == 0) {
-            return this;
-        }
-        System.out.println("Has introducido información herronea, no te mueves");
-        return this;
-    }
+    public abstract Habitacion movimiento();
 
     public static Habitacion[] crearInfo(){
         habitaciones = new Habitacion[7];
-        Habitacion vestibulo = new Habitacion("Vestibulo");
-        Habitacion estudio = new Habitacion("Estudio");
-        Habitacion invernadero = new Habitacion("Invernadero");
-        Habitacion salaBillar = new Habitacion("Sala del Billar");
-        Habitacion cocina = new Habitacion("Cocina");
-        Habitacion salon = new Habitacion("Salón");
-        Habitacion sotano = new Habitacion("Sótano");
+        Vestibulo vestibulo = new Vestibulo("Vestibulo");
+        Estudio estudio = new Estudio("Estudio");
+        Invernadero invernadero = new Invernadero("Invernadero");
+        SalaBillar salaBillar = new SalaBillar("Sala del Billar");
+        Cocina cocina = new Cocina("Cocina");
+        Salon salon = new Salon("Salón");
+        Sotano sotano = new Sotano("Sótano");
 
         vestibulo.accesos = new Habitacion[]{estudio, cocina};
         estudio.accesos = new Habitacion[]{vestibulo, invernadero};
@@ -91,4 +73,6 @@ public class Habitacion {
 
         return habitaciones;
     }
+
+    public abstract void acciones();
 }
