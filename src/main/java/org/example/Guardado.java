@@ -12,8 +12,28 @@ import java.io.IOException;
 public class Guardado {
     public void guardarPartida(String nombre, int puntos, String sala, Grabadora grabadora, Inventario inventario) {
         DatoGuardado datoGuardado = new DatoGuardado(nombre, puntos, sala);
+        guardarDato(datoGuardado);
         guardarGrabadora(grabadora);
         guardarInventario(inventario);
+    }
+
+    public void guardarDato(DatoGuardado datoGuardado) {
+        Gson gson = new GsonBuilder().setPrettyPrinting().create();
+        try (FileWriter writer = new FileWriter("guardado/dato.json")) {
+            gson.toJson(datoGuardado, writer);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    public DatoGuardado leerDato(){
+        Gson gson = new Gson();
+        try (FileReader reader = new FileReader("guardado/grabadora.json")) {
+            DatoGuardado datoGuardado = gson.fromJson(reader, DatoGuardado.class);
+            return datoGuardado;
+        } catch (IOException e) {
+            e.printStackTrace();
+            return null;
+        }
     }
 
     public void guardarGrabadora(Grabadora grabadora) {
