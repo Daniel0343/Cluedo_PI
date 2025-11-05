@@ -9,6 +9,7 @@ public class Habitacion {
     ArrayList<Object> opciones;
     Habitacion [] accesos;
     static public Habitacion[] habitaciones;
+    boolean descubierto = false;
 
     public Habitacion(String nombre) {
         this.nombre = nombre;
