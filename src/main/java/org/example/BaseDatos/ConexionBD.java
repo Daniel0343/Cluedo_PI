@@ -1,8 +1,7 @@
 package org.example.BaseDatos;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
+import java.sql.*;
+import java.util.Locale;
 
 public class ConexionBD {
 
@@ -10,9 +9,9 @@ public class ConexionBD {
 
     // Declaramos los datos de conexion a la bd
     private static final String driver="com.mysql.cj.jdbc.Driver";
-    private static final String user="if0_40284755";
-    private static final String pass="2mrHJ4tD89";
-    private static final String url="jdbc:mysql://sql309.infinityfree.com/if0_40284755_cluedo";
+    private static final String user="root";
+    private static final String pass="pascual";
+    private static final String url="jdbc:mysql://localhost:3306/cluedo";
 
     private ConexionBD(){
         try{
@@ -39,5 +38,4 @@ public class ConexionBD {
             e.printStackTrace();
         }
     }
-
 }
