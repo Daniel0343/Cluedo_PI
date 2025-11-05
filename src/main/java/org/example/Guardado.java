@@ -3,7 +3,6 @@ package org.example;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import org.example.Dialogos.Grabadora;
-import org.example.Salas.Sala;
 
 import java.io.FileReader;
 import java.io.FileWriter;
@@ -72,8 +71,4 @@ public class Guardado {
             return null;
         }
     }
-
-
-    public void guardarSalas(){}
-    public Sala leerSala(){return null;}
 }
