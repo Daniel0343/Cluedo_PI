@@ -10,6 +10,7 @@ public class Main {
         Habitacion.crearInfo();
 
 
+
         System.out.println("Empieza el juego. Sala oscura.");
         boolean apagada = true;
         boolean linterna = false;
