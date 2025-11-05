@@ -117,4 +117,32 @@ public class Main {
             Thread.sleep(ms);
         } catch (InterruptedException ignored) {}
     }
+
+    public static void mostrarMapa(String actual) {
+        final String RESET   = "\u001B[0m";
+        final String GREEN   = "\u001B[32m";
+        final String CYAN    = "\u001B[36m";
+        final String BOLD    = "\u001B[1m";
+
+
+        java.util.function.Function<String, String> r = nombre ->
+                nombre.equalsIgnoreCase(actual)
+                        ? BOLD + GREEN + nombre.toUpperCase() + RESET
+                        : nombre;
+
+        System.out.println();
+        System.out.println(CYAN + "╔════════════════════════════════════════════════════════════════════╗" + RESET);
+        System.out.println(CYAN + "║                       MANSIÓN TUDOR (MAPA)                         ║" + RESET);
+        System.out.println(CYAN + "╠════════════════════════════════════════════════════════════════════╣" + RESET);
+        System.out.printf (CYAN + "║  [%s]───[%s]───[%s]───[%s]               ║%n" + RESET,
+                r.apply("ESTUDIO"), r.apply("INVERNADERO"), r.apply("SALA BILLAR"), r.apply("SALÓN"));
+        System.out.println(CYAN + "║       │              │                     │                       ║" + RESET);
+        System.out.printf (CYAN + "║  [%s]──────[%s]──────────────[%s]                   ║%n" + RESET,
+                r.apply("VESTÍBULO"), r.apply("COCINA"), r.apply("SÓTANO"));
+        System.out.println(CYAN + "╚════════════════════════════════════════════════════════════════════╝" + RESET);
+        System.out.println();
+    }
+
 }
+
+
