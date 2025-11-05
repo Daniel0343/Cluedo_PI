@@ -31,8 +31,7 @@ public class Main {
         // --- LOGIN / CREACIÓN DE USUARIO ---
         System.out.print("\n¿Tienes una cuenta existente? (s/n): ");
         String tieneCuenta = sc.nextLine();
-
-        Usuario usuario = null; // Inicialización explícita, buena práctica.
+        // Inicialización explícita, buena práctica.
 
         if (tieneCuenta.equalsIgnoreCase("s")) {
             System.out.print("Introduce tu nombre de usuario: ");
@@ -40,7 +39,7 @@ public class Main {
             System.out.print("Introduce tu contraseña: ");
             String pass = sc.nextLine();
 
-            if (usuario.validarUsuario(nombre, pass)) {
+            if (Usuario.validarUsuario(nombre, pass)) {
                 System.out.println("Usuario validado correctamente. ¡Bienvenido, " + nombre + "!");
             } else {
                 System.out.println("Usuario o contraseña incorrectos. Saliendo...");
@@ -54,7 +53,7 @@ public class Main {
             System.out.print("Introduce una contraseña: ");
             String pass = sc.nextLine();
 
-            if (usuario.crearUsuario(nombre, pass)) {
+            if (Usuario.crearUsuario(nombre, pass)) {
                 System.out.println("Usuario creado correctamente.");
             }  else {
                 System.out.println("Fallo al crear usuario");
