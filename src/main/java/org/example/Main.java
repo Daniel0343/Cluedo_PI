@@ -54,8 +54,11 @@ public class Main {
             System.out.print("Introduce una contraseña: ");
             String pass = sc.nextLine();
 
-            usuario.crearUsuario(nombre, pass);
-            System.out.println("Usuario creado correctamente.");
+            if (usuario.crearUsuario(nombre, pass)) {
+                System.out.println("Usuario creado correctamente.");
+            }  else {
+                System.out.println("Fallo al crear usuario");
+            }
         }
 
         // --- CARGA DE ARCHIVOS JSON ---
