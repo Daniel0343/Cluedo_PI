@@ -12,6 +12,15 @@ public class DatoGuardado {
         this.sala = sala;
     }
 
+    public String getNombre() {
+        return nombre;
+    }
 
+    public int getPuntos() {
+        return puntos;
+    }
 
+    public String getSala() {
+        return sala;
+    }
 }
