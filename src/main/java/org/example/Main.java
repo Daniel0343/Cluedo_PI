@@ -1,187 +1,77 @@
 package org.example;
 
-import java.sql.Connection;
-import java.util.ArrayList;
-import java.util.Scanner;
 
-import org.example.BaseDatos.*;
-import org.example.Dialogos.*;
-import org.example.Dialogos.Dialogos;
-import org.example.Objetos.*;
-import org.example.Objetos.Descripcion;
-import org.example.Objetos.Descripciones;
+import org.example.Salas.Habitacion;
 
+//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
+// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
-
-    // códigos ansi para color en terminal
-    private static final String RESET   = "\u001B[0m";
-    private static final String RED     = "\u001B[31m";
-    private static final String GREEN   = "\u001B[32m";
-    private static final String YELLOW  = "\u001B[33m";
-    private static final String BLUE    = "\u001B[34m";
-    private static final String MAGENTA = "\u001B[35m";
-    private static final String CYAN    = "\u001B[36m";
-    private static final String BOLD    = "\u001B[1m";
-
-    public static void main(String[] args) {
-
-        // bienvenida - pantalla inicial llamativa
-        System.out.println();
-        System.out.println(CYAN + "╔════════════════════════════════════════════════════════════════════════╗" + RESET);
-        System.out.println(CYAN + "║" + RESET + "                                                                        " + CYAN + "║" + RESET);
-        System.out.println(CYAN + "║" + RESET + "                " + BOLD + YELLOW + "CLUEDO" + RESET + "  " + BOLD + MAGENTA + "· traición en la mansión tudor" + RESET + "                  " + CYAN + "║" + RESET);
-        System.out.println(CYAN + "║" + RESET + "                                                                        " + CYAN + "║" + RESET);
-        System.out.println(CYAN + "╚════════════════════════════════════════════════════════════════════════╝" + RESET);
-        System.out.println();
-        System.out.println(RED + "    Un asesinato. una mansión. secretos que no quieren salir a la luz." + RESET);
-        System.out.println(RED + "    el reloj corre. eres el detective. ¿podrás descubrir la verdad?" + RESET);
-        System.out.println();
-
-        System.out.println();
-
-        System.out.println();
+    static void main() {
+        Habitacion.crearInfo();
 
 
-        /*
 
-        Scanner sc = new Scanner(System.in);
+        System.out.println("Empieza el juego. Sala oscura.");
+        boolean apagada = true;
+        boolean linterna = false;
+        boolean llave = false;
+        while (apagada) {
+            System.out.println("Elige una opción");
+            System.out.println("1 - Opción");
+            System.out.println("2 - Opción");
+            System.out.println("3 - Opción");
+            int opcion = Escaner.entero();
+            switch (opcion) {
+                case 1:
+                    System.out.println("Has chocado contra algo, no distingues bien que es");
+                    if (linterna) {
+                        System.out.println("Con la linterna consigues diferenciar un mueble, debajo del mueble ves una llave con forma de triángulo. ¿La coges? (s/n)");
+                        String eleccion = Escaner.string();
+                        if (eleccion.equals("s")) {
+                            System.out.println("Llave recogida");
+                            llave = true;
+                        }
+                    }
+                    break;
+                case 2:
+                    System.out.println("Te has chocado con lo que parece un mueble, abres un cajón y distingues un objeto, lo cojes? (s/n)");
+                    String eleccion = Escaner.string();
+                    if (eleccion.equals("s")) {
+                        System.out.println("Has cojado el objeto, es una linterna");
+                        linterna = true;
+                    }
+                    break;
+                case 3:
+                    System.out.println("Covas contra algo, no distingues bien que es");
+                    if (linterna) {
+                        System.out.println("Con la linterna consigues diferenciar que es un cuadro de luz, pero está cerrado con llave, la cerradura tiene forma de triangulo");
+                        if (llave) {
+                            System.out.println("Quieres probar a abrir la cerradura con la llave? (s/n)");
+                            String eleccion2 = Escaner.string();
 
-        // --- conexión base de datos ---
-        Connection conexion = ConexionBD.getConnection();
-        if (conexion != null) {
-            System.out.println("conectado correctamente a la base de datos.");
-        } else {
-            System.out.println("no se pudo conectar con la base de datos.");
-        }
+                            if (eleccion2.equals("s")) {
+                                System.out.println("Abres la cerradura");
+                                System.out.println("Enfocas con la linterna y ves una palanca hacia abajo, la quieres levantar? (s/n)");
 
-        // --- login / creación de usuario ---
-        System.out.print("\n¿tienes una cuenta existente? (s/n): ");
-        String tieneCuenta = sc.nextLine();
-
-        Usuario usuario = null; // inicialización explícita, buena práctica.
-
-        if (tieneCuenta.equalsIgnoreCase("s")) {
-            System.out.print("introduce tu nombre de usuario: ");
-            String nombre = sc.nextLine();
-            System.out.print("introduce tu contraseña: ");
-            String pass = sc.nextLine();
-
-            if (usuario.validarUsuario(nombre, pass)) {
-                System.out.println("usuario validado correctamente. ¡bienvenido, " + nombre + "!");
-            } else {
-                System.out.println("usuario o contraseña incorrectos. saliendo...");
-                ConexionBD.closeConnection();
-                return;
-            }
-
-        } else {
-            System.out.print("introduce tu nombre de usuario nuevo: ");
-            String nombre = sc.nextLine();
-            System.out.print("introduce una contraseña: ");
-            String pass = sc.nextLine();
-
-            if (usuario.crearUsuario(nombre, pass)) {
-                System.out.println("usuario creado correctamente.");
-            }  else {
-                System.out.println("fallo al crear usuario");
-            }
-        }
-
-        // --- carga de archivos json ---
-        ArrayList<Dialogo> dialogos = Dialogos.getDialogos();
-        ArrayList<Descripcion> descripciones = Descripciones.getDescripciones();
-
-        System.out.println("\ndatos de juego cargados:");
-        System.out.println("- " + dialogos.size() + " diálogos disponibles");
-        System.out.println("- " + descripciones.size() + " descripciones cargadas");
-
-        // --- inicializar inventario ---
-        Inventario inventario = new Inventario();
-
-        System.out.println("\nempiezas tu investigación en el vestíbulo de la mansión tudor.");
-        System.out.println("escribe 'ayuda' para ver los comandos disponibles.");
-
-        // --- bucle principal del juego ---
-        boolean jugando = true;
-        while (jugando) {
-            System.out.print("\n> ");
-            String comando = sc.nextLine().trim().toLowerCase();
-
-            if (comando.equals("ayuda")) {
-
-                System.out.println("comandos disponibles:");
-                System.out.println("- hablar [nombre]       → habla con un personaje");
-                System.out.println("- examinar [nombre]     → examina un objeto");
-                System.out.println("- inventario            → muestra tus objetos");
-                System.out.println("- ranking               → muestra el ranking global");
-                System.out.println("- salir                 → termina la partida");
-
-            } else if (comando.equals("inventario")) {
-                System.out.println("tu inventario:");
-                inventario.mostrarInventario();
-
-            } else if (comando.equals("ranking")) {
-                Puntuaciones.mostrarPuntuaciones();
-
-            } else if (comando.equals("salir")) {
-                System.out.println("saliendo del juego... hasta la próxima, detective.");
-                jugando = false;
-
-            } else if (comando.startsWith("hablar")) {
-                String nombre = comando.replace("hablar", "").trim();
-
-                if (nombre.isEmpty()) {
-                    System.out.println("debes indicar con quién quieres hablar.");
-                } else {
-
-                    Dialogo dialogoEncontrado = null;
-
-                    for (int i = 0; i < dialogos.size(); i++) {
-                        Dialogo d = dialogos.get(i);
-
-                        if (d.getNombre().equalsIgnoreCase(nombre) && d.getTipo() == TipoDialogo.PERSONAJE) {
-                            dialogoEncontrado = d;
-                            break; // romper el bucle for
+                                String eleccion3 = Escaner.string();
+                                if (eleccion3.equals("s")) {
+                                    System.out.println("Levantas la palanca. Al instante un brillo extremo te sorprende, has encedido la luz de la habitación. Te encuentras en el vestibulo");
+                                    apagada = false;
+                                }
+                            }
+                        }else{
+                            System.out.println("No tienes forma de abrir la cerradura");
                         }
                     }
 
-                    if (dialogoEncontrado != null) {
-                        System.out.println(nombre + ": \"" + dialogoEncontrado.getDialogo() + "\"");
-                    } else {
-                        System.out.println("no hay ningún personaje llamado '" + nombre + "' aquí o no tiene diálogo.");
-                    }
-                }
-
-            } else if (comando.startsWith("examinar")) {
-                String nombre = comando.replace("examinar", "").trim();
-
-                if (nombre.isEmpty()) {
-                    System.out.println("debes indicar qué objeto quieres examinar.");
-                } else {
-
-                    Descripcion descripcionEncontrada = null;
-
-                    for (Descripcion desc : descripciones) {
-                        if (desc.getNombre().equalsIgnoreCase(nombre)) {
-                            descripcionEncontrada = desc;
-                            break; // romper el bucle
-                        }
-                    }
-
-                    if (descripcionEncontrada != null) {
-                        System.out.println("🔍 " + descripcionEncontrada.getDescripcion());
-                    } else {
-                        System.out.println("no ves nada interesante en " + nombre + ".");
-                    }
-                }
-
-            } else {
-                System.out.println("comando no reconocido. escribe 'ayuda' para ver los comandos disponibles.");
+                    break;
             }
         }
+        Jugador j = new Jugador("nombre", Habitacion.habitaciones[0]);
 
-        // --- cerrar conexión bd ---
-        ConexionBD.closeConnection();
-        */
+        while (true) {
+            j.acciones();
+        }
     }
+
 }

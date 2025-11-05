@@ -1,4 +1,6 @@
-package org.example;
+package org.example.Salas;
+
+import org.example.Escaner;
 
 import java.util.ArrayList;
 
@@ -6,12 +8,29 @@ public class Habitacion {
     String nombre;
     ArrayList<Object> opciones;
     Habitacion [] accesos;
-    static Habitacion[] habitaciones;
+    static public Habitacion[] habitaciones;
+    boolean descubierto = false;
 
     public Habitacion(String nombre) {
         this.nombre = nombre;
         //this.opciones = asignaOpciones();
     }
+
+    public Habitacion[] getAccesos() {
+        return accesos;
+    }
+
+    public ArrayList<Object> getOpciones() {
+        return opciones;
+    }
+    public void setOpciones(ArrayList<Object> opciones) {
+        this.opciones = opciones;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+    public void setNombre(String nombre) {}
 
     private ArrayList<Object> asignaOpciones(ArrayList<Object> totalObjetos) {
         ArrayList<Object> opciones = new ArrayList<Object>();

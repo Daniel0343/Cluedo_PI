@@ -1,5 +1,7 @@
 package org.example;
 
+import org.example.Salas.Habitacion;
+
 import java.util.ArrayList;
 
 public class Jugador {
@@ -17,7 +19,7 @@ public class Jugador {
     }
 
     public void acciones(){
-        System.out.println("¿Que quieres hacer en " +  ubicacion.nombre+"?   |  PRUEBA (1,2) \n1 - acciones en la habitación\n2 - Cambiar de habitación");
+        System.out.println("¿Que quieres hacer en " +  ubicacion.getNombre()+"?   |  PRUEBA (1,2) \n1 - acciones en la habitación\n2 - Cambiar de habitación");
         int opcion = Escaner.entero();
         switch (opcion){
             case 1:
