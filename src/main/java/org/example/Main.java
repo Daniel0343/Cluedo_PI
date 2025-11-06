@@ -124,7 +124,7 @@ public class Main {
         final String CYAN    = "\u001B[36m";
         final String BOLD    = "\u001B[1m";
 
-
+        // resalta solo la sala actual
         java.util.function.Function<String, String> r = nombre ->
                 nombre.equalsIgnoreCase(actual)
                         ? BOLD + GREEN + nombre.toUpperCase() + RESET
@@ -132,16 +132,15 @@ public class Main {
 
         System.out.println();
         System.out.println(CYAN + "╔════════════════════════════════════════════════════════════════════╗" + RESET);
-        System.out.println(CYAN + "║                       MANSIÓN TUDOR (MAPA)                         ║" + RESET);
+        System.out.println(CYAN + "║" + RESET + "                       MANSIÓN TUDOR (MAPA)                        " + CYAN + " ║" + RESET);
         System.out.println(CYAN + "╠════════════════════════════════════════════════════════════════════╣" + RESET);
-        System.out.printf (CYAN + "║  [%s]───[%s]───[%s]───[%s]               ║%n" + RESET,
-                r.apply("ESTUDIO"), r.apply("INVERNADERO"), r.apply("SALA BILLAR"), r.apply("SALÓN"));
-        System.out.println(CYAN + "║       │              │                     │                       ║" + RESET);
-        System.out.printf (CYAN + "║  [%s]──────[%s]──────────────[%s]                   ║%n" + RESET,
-                r.apply("VESTÍBULO"), r.apply("COCINA"), r.apply("SÓTANO"));
+        System.out.println(CYAN + "║" + RESET + "  [" + r.apply("ESTUDIO") + "]───[" + r.apply("INVERNADERO") + "]───[" + r.apply("Sala del Billar") + "]───[" + r.apply("SALÓN") + "]           " + CYAN + "║" + RESET);
+        System.out.println(CYAN + "║" + RESET + "       │              │                     │                       " + CYAN + "║" + RESET);
+        System.out.println(CYAN + "║" + RESET + "  [" + r.apply("Vestibulo") + "]──────[" + r.apply("COCINA") + "]──────────────[" + r.apply("SÓTANO") + "]                   " + CYAN + "║" + RESET);
         System.out.println(CYAN + "╚════════════════════════════════════════════════════════════════════╝" + RESET);
         System.out.println();
     }
+
 
 }
 
