@@ -26,7 +26,7 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         // crear jugador y pasar al control por habitaciones
         Jugador j = null;
-
+        Grabadora g = new Grabadora();
         String contrasena;
         String nombre;
         do {
@@ -85,7 +85,7 @@ public class Main {
                         pausa(2000);
 
                         DatoGuardado dg = Guardado.leerDato();
-                        Grabadora g = Guardado.leerGrabadora();
+                        g = Guardado.leerGrabadora();
                         j = new Jugador(dg.getNombre(),dg.getSala());
                         j.inventario = Guardado.leerInventario();
                     }
