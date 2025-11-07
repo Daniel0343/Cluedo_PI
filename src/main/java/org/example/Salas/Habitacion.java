@@ -1,6 +1,7 @@
 package org.example.Salas;
 
 import org.example.Escaner;
+import org.example.Jugador;
 
 import java.util.ArrayList;
 
@@ -74,5 +75,5 @@ public abstract class Habitacion {
         return habitaciones;
     }
 
-    public abstract void acciones();
+    public abstract void acciones(Jugador j);
 }

@@ -1,6 +1,7 @@
 package org.example.Salas;
 
 import org.example.Escaner;
+import org.example.Jugador;
 
 public class Cocina extends Habitacion{
     static boolean abierta = false;
@@ -28,7 +29,7 @@ public class Cocina extends Habitacion{
     }
 
     @Override
-    public void acciones() {
+    public void acciones(Jugador j) {
 
     }
 

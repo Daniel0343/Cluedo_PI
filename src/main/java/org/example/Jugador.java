@@ -7,7 +7,9 @@ import java.util.ArrayList;
 public class Jugador {
     String nombre;
     Habitacion ubicacion;
-    ArrayList<Object> inventario;
+    public Inventario inventario;
+
+
 
     public Jugador(String nombre, Habitacion vestibulo){
         this.nombre = nombre;
@@ -24,10 +26,11 @@ public class Jugador {
         switch (opcion){
             case 1:
                 System.out.println("ACCIONES");
+                ubicacion.acciones(this);
                 break;
             case 2:
                 setUbicanción(ubicacion.movimiento());
-                Main.mostrarMapa(ubicacion.getNombre());
+                //Main.mostrarMapa(ubicacion.getNombre());
                 break;
             default:
                 System.out.println("Valor incorrecto, vuelve a intentarlo");

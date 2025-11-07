@@ -1,6 +1,7 @@
 package org.example.Salas;
 
 import org.example.Escaner;
+import org.example.Jugador;
 
 public class Sotano extends Habitacion{
     public Sotano(String nombre) {
@@ -25,7 +26,7 @@ public class Sotano extends Habitacion{
         return this;
     }
     @Override
-    public void acciones() {
+    public void acciones(Jugador j) {
 
     }
 }

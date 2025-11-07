@@ -1,6 +1,7 @@
 package org.example.Salas;
 
 import org.example.Escaner;
+import org.example.Jugador;
 
 public class Vestibulo extends Habitacion{
 
@@ -31,7 +32,7 @@ public class Vestibulo extends Habitacion{
     }
 
     @Override
-    public void acciones() {
+    public void acciones(Jugador j) {
 
     }
 }
