@@ -82,13 +82,32 @@ public class Puzles {
 
 
     public static boolean puzzle_enredaderas(){
+        Scanner sc = new Scanner(System.in);
         ArrayList<String> resultado = new ArrayList<>();
         for (int i = 1; i <= 5; i++) {
             resultado.add("Enrredadera "+i);
         }
         Collections.shuffle(resultado);
-
-
+        String resultadotexto = String.join("", resultado);
+        Collections.shuffle(resultado);
+        String resultadotexto2 = String.join("", resultado);
+        System.out.println("Ordena las siguientes enrredaderas: " + resultadotexto2);
+        String seguir = "";
+        do{
+            System.out.print("Introduce el orden correcto de las enrredaderas, con este formato: 51324 : ");
+            String introducido =  sc.nextLine();
+            if (introducido.equals(resultadotexto)){
+                System.out.println("Has acertado");
+                return true;
+            } else {
+                System.out.println("Has fallado");
+                System.out.print("Quieres volver a intentarlo s/n (s): ");
+                seguir = sc.nextLine();
+                if (!seguir.matches("n|s")){
+                    seguir = "s";
+                }
+            }
+        }while(!seguir.equals("n"));
         return  true;
     }
 }
