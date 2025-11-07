@@ -71,6 +71,7 @@ public class Puzles {
                   puzleResuelto = true; // Termina el bucle
               } else {
                   System.out.println(BOLD + RED + "Código incorrecto. Inténtalo de nuevo." + RESET);
+
               }
           }
 

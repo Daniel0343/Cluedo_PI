@@ -2,7 +2,9 @@ package org.example.Salas;
 
 import org.example.Escaner;
 import org.example.Jugador;
+import org.example.Main;
 import org.example.Objetos.Objeto;
+import org.example.Pausa;
 
 public class Estudio extends Habitacion {
     public Estudio(String nombre) {
@@ -39,6 +41,7 @@ public class Estudio extends Habitacion {
 
         switch (opcion) {
             case 1:
+                System.out.println("Ves una armadura tirada en el suelo, como si alguien ha pasado coriendo y la ha tirado");
                 System.out.println("Inspeccionas la armadura detenidamente y ves una pluma blanca que sobresale un poco. ¿Quieres cogerla? (s/n)");
                 if (Escaner.sn()) {
                     if (!j.inventario.contieneItem("Pluma")) {
@@ -77,6 +80,26 @@ public class Estudio extends Habitacion {
                 if (j.inventario.contieneItem("Llave corazón")) {
                     System.out.println("Usas la llave corazón para abrir el armario...");
                     System.out.println("Dentro encuentras el cadáver del Dr. Black. 🕯️");
+
+                    System.out.println("Encuentras en uno de sus bolsillos una carta ");
+                    System.out.println("Quieres coger la carta? (s/n)");
+
+                    if (Escaner.sn()){
+                        if (!j.inventario.contieneItem("Carta amapola")){
+                            j.inventario.agregarItem(new Objeto("Carta amapola"));
+                            Pausa.esperar(1000);
+                            System.out.println("Has cogido la carta de amapola");
+                        }else {
+                            Pausa.esperar(1000);
+                            System.out.println("Ya tienes la carta.");
+                        }
+
+                    }
+
+                    //Final llama policia y resolver asesinato
+
+
+
                     System.out.println("El misterio empieza a tomar forma...");
                 } else {
                     System.out.println("No tienes la llave adecuada. Quizás esté en algún otro lugar.");

@@ -78,8 +78,6 @@ public class Invernadero extends Habitacion {
 
             case 2:
                 if (!puzzleResuelto) {
-                    System.out.println("Te fijas en un conjunto de plantas dispuestas de manera extraña. Parece un mecanismo.");
-                    System.out.println("¿Quieres intentar resolver el puzzle? (s/n)");
                     if (Escaner.sn()) {
                         if (Puzles.puzzle_enredaderas()) {
                             puzzleResuelto = true;
