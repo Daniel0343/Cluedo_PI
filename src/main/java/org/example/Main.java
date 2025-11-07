@@ -1,8 +1,10 @@
 package org.example;
 
+import org.example.BaseDatos.Puntuacion;
 import org.example.BaseDatos.Usuario;
 import org.example.Dialogos.Grabadora;
 import org.example.Salas.Habitacion;
+import org.example.Salas.Invernadero;
 
 import javax.xml.crypto.Data;
 import java.io.File;
@@ -23,7 +25,7 @@ public class Main {
 
         Scanner scanner = new Scanner(System.in);
         // crear jugador y pasar al control por habitaciones
-        Jugador j = new Jugador("jugador", Habitacion.habitaciones[0]);
+        Jugador j = null;
 
         String contrasena;
         String nombre;
@@ -53,19 +55,20 @@ public class Main {
         } while (!Usuario.validarUsuario(nombre, contrasena));
 
 
-        System.out.println("-- Carga Partida --");
-        System.out.println("1. Nueva Partida");
-        System.out.println("2. Cargar Partida");
-        String opcion_cargar = scanner.nextLine();
 
+        String opcion_cargar = "";
         do {
-
+            System.out.println("-- Carga Partida --");
+            System.out.println("1. Nueva Partida");
+            System.out.println("2. Cargar Partida");
+            opcion_cargar = scanner.nextLine();
 
             switch (opcion_cargar) {
 
                 case "1":
 
                     System.out.println("Nueva Partida");
+                    j = new Jugador(nombre, Habitacion.habitaciones[0]);
                     break;
 
 
@@ -83,14 +86,10 @@ public class Main {
 
                         DatoGuardado dg = Guardado.leerDato();
                         Grabadora g = Guardado.leerGrabadora();
-                        Jugador i = Guardado.leerInventario();
-
-
-
-
-
-
+                        j = new Jugador(dg.getNombre(),dg.getSala());
+                        j.inventario = Guardado.leerInventario();
                     }
+                    break;
 
 
             }
@@ -262,6 +261,11 @@ public class Main {
         pausa(800);
         System.out.println(RED+ " un trueno muy fuerte se escucha y rápidamente del susto entras por el vestíbulo  dándote cuenta de que está todo oscuro..."+ RESET);
         pausa(800);
+    }
+
+    public static void subirPuntuacion(String nombre, Grabadora g, Inventario i) {
+        int puntos = g.getDialogos().size() + i.getInventario().size();
+        Puntuacion.subirPuntuacion(nombre, puntos);
     }
 
 

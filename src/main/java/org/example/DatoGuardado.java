@@ -1,12 +1,14 @@
 package org.example;
 
 
+import org.example.Salas.Habitacion;
+
 public class DatoGuardado {
     private String nombre;
 
-    private String sala;
+    private Habitacion sala;
 
-    public DatoGuardado(String nombre, String sala) {
+    public DatoGuardado(String nombre, Habitacion sala) {
         this.nombre = nombre;
 
         this.sala = sala;
@@ -18,7 +20,7 @@ public class DatoGuardado {
 
 
 
-    public String getSala() {
+    public Habitacion getSala() {
         return sala;
     }
 }

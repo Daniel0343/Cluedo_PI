@@ -8,7 +8,7 @@ public class Usuario {
         //Consultar en la base de datos si existe el usuario
         try{
             Statement statement = ConexionBD.getConnection().createStatement();
-            String query = "SELECT nombre FROM usuario";
+            String query = "SELECT nombre FROM usuarios";
             ResultSet resultSet = statement.executeQuery(query);
 
             while(resultSet.next()){
@@ -28,7 +28,7 @@ public class Usuario {
         //Crear el nuevo usuario en la base de datos
         if (!comprobarUsuario(nombre)){
             try {
-                PreparedStatement statement = ConexionBD.getConnection().prepareStatement("INSERT INTO usuario (nombre, contrasena) VALUES (?, ?)");
+                PreparedStatement statement = ConexionBD.getConnection().prepareStatement("INSERT INTO usuarios (nombre, contrasena) VALUES (?, ?)");
                 statement.setString(1, nombre);
                 statement.setString(2, contrasena);
                 boolean insertado = 1 == statement.executeUpdate();
@@ -47,7 +47,7 @@ public class Usuario {
         //Comprobar que el usuario y contraseña son correctos para iniciar sesión
         try{
             Statement statement = ConexionBD.getConnection().createStatement();
-            String query = "SELECT nombre, contrasena FROM usuario";
+            String query = "SELECT nombre, contrasena FROM usuarios";
             ResultSet resultSet = statement.executeQuery(query);
 
             while(resultSet.next()){

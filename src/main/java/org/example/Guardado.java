@@ -3,13 +3,14 @@ package org.example;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import org.example.Dialogos.Grabadora;
+import org.example.Salas.Habitacion;
 
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 
 public class Guardado {
-    public static void guardarPartida(String nombre, String sala, Grabadora grabadora, Inventario inventario) {
+    public static void guardarPartida(String nombre, Habitacion sala, Grabadora grabadora, Inventario inventario) {
         DatoGuardado datoGuardado = new DatoGuardado(nombre, sala);
         guardarDato(datoGuardado);
         guardarGrabadora(grabadora);
