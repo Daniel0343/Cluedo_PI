@@ -1,4 +1,33 @@
 [
+
+  {
+    "nombre": "Llave circular",
+    "descripcion": "“Llave dorada con una forma circular, abriré algo con esto?” ",
+    "tipo": "OBJETO"
+
+  },
+  {
+    "nombre": "Anillo Rojo",
+    "descripcion": "Parece bastante valioso, detrás pone las iniciales de un nombre: O.R",
+    "tipo": "OBJETO"
+  },
+  {
+    "nombre": "Carta amapola",
+    "descripcion": "Parece una carta con un logo bastante inusual, al abrirla encuentras el mensaje: Encontrémonos en el sótano. Tenemos que hablar. Atte.Amapola ",
+    "tipo": "OBJETO"
+  },
+  {
+    "nombre": "Llave forma Corazón",
+    "descripcion": "Una llave plateada que parece que sirve para habrir alguna cerradura con forma de corazón",
+    "tipo": "OBJETO"
+  },
+
+  {
+    "nombre": "Anillo Rojo",
+    "descripcion": "Parece bastante valioso, detrás pone las iniciales de un nombre: O.R",
+    "tipo": "OBJETO"
+  },
+
   {
     "nombre": "Linterna",
     "descripcion": "Proporciona luz en zonas oscuras.",
@@ -32,11 +61,6 @@
   {
     "nombre": "Ingredientes y Utensilios",
     "descripcion": "Utilizados en el puzzle de la cocina.",
-    "tipo": "OBJETO"
-  },
-  {
-    "nombre": "Anillo Rojo",
-    "descripcion": "Anillo de mujer hallado en el salón.",
     "tipo": "OBJETO"
   },
   {

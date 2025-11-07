@@ -27,6 +27,7 @@ public class Jugador {
                 break;
             case 2:
                 setUbicanción(ubicacion.movimiento());
+                Main.mostrarMapa(ubicacion.getNombre());
                 break;
             default:
                 System.out.println("Valor incorrecto, vuelve a intentarlo");
