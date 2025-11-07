@@ -24,6 +24,7 @@ public class Main {
     public static void main(String[] args) {
 
         Scanner scanner = new Scanner(System.in);
+        Habitacion.crearInfo();
         // crear jugador y pasar al control por habitaciones
         Jugador j = null;
         Grabadora g = new Grabadora();
@@ -98,16 +99,7 @@ public class Main {
 
 
 
-
-
-
-
-
-
         inicio_juego();
-
-        Habitacion.crearInfo();
-
 
         System.out.println("Empieza el juego: sala oscura.");
         pausa(1000);
