@@ -17,80 +17,80 @@ public class Main {
 
     public static void main(String[] args) {
 
-//
-//        inicio_juego();
-//
+
+        inicio_juego();
+
         Habitacion.crearInfo();
-//
-//        // introducción llamativa
-//
-//
-//        System.out.println("Empieza el juego: sala oscura.");
-//        pausa(1000);
-//        boolean apagada = true;
-//        boolean linterna = false;
-//        boolean llave = false;
-//
-//        while (apagada) {
-//            System.out.println("\nelige una opción:");
-//            System.out.println("1 - buscar alrededor del escritorio");
-//            System.out.println("2 - inspeccionar el mueble cercano");
-//            System.out.println("3 - avanzar hacia el fondo de la sala");
-//
-//            int opcion = Escaner.entero();
-//            switch (opcion) {
-//                case 1:
-//                    System.out.println("has chocado contra algo, no distingues bien qué es.");
-//                    if (linterna) {
-//                        pausa(800);
-//                        System.out.println("con la linterna ves una llave triangular bajo el escritorio. ¿la coges? (s/n)");
-//                        String eleccion = Escaner.string();
-//                        if (eleccion.equalsIgnoreCase("s")) {
-//                            pausa(600);
-//                            System.out.println("has recogido la llave triangular.");
-//                            llave = true;
-//                        }
-//                    }
-//                    break;
-//
-//                case 2:
-//                    System.out.println("tocas lo que parece un mueble... abres un cajón y notas algo metálico. ¿lo coges? (s/n)");
-//                    String eleccion2 = Escaner.string();
-//                    if (eleccion2.equalsIgnoreCase("s")) {
-//                        pausa(600);
-//                        System.out.println("has cogido el objeto: una linterna.");
-//                        linterna = true;
-//                    }
-//                    break;
-//
-//                case 3:
-//                    System.out.println("te golpeas con algo grande y frío. no ves qué es.");
-//                    if (linterna) {
-//                        pausa(700);
-//                        System.out.println("con la linterna ves un cuadro de luz cerrado con llave triangular.");
-//                        if (llave) {
-//                            pausa(600);
-//                            System.out.println("¿quieres intentar abrirlo con la llave? (s/n)");
-//                            String eleccion3 = Escaner.string();
-//                            if (eleccion3.equalsIgnoreCase("s")) {
-//                                pausa(700);
-//                                System.out.println("abres la tapa... dentro hay una palanca. ¿quieres subirla? (s/n)");
-//                                String eleccion4 = Escaner.string();
-//                                if (eleccion4.equalsIgnoreCase("s")) {
-//                                    pausa(1000);
-//                                    System.out.println(GREEN + "\n💡 las luces se encienden de golpe. la sala brilla. estás en el vestíbulo." + RESET);
-//                                    apagada = false;
-//                                }
-//                            }
-//                        } else {
-//                            System.out.println("parece que no tienes la llave adecuada.");
-//                        }
-//                    } else {
-//                        System.out.println("no ves nada. tal vez una linterna ayudaría.");
-//                    }
-//                    break;
-//            }
-//        }
+
+        // introducción llamativa
+
+
+        System.out.println("Empieza el juego: sala oscura.");
+        pausa(1000);
+        boolean apagada = true;
+        boolean linterna = false;
+        boolean llave = false;
+
+        while (apagada) {
+            System.out.println("\nelige una opción:");
+            System.out.println("1 - buscar alrededor del escritorio");
+            System.out.println("2 - inspeccionar el mueble cercano");
+            System.out.println("3 - avanzar hacia el fondo de la sala");
+
+            int opcion = Escaner.entero();
+            switch (opcion) {
+                case 1:
+                    System.out.println("has chocado contra algo, no distingues bien qué es.");
+                    if (linterna) {
+                        pausa(800);
+                        System.out.println("con la linterna ves una llave triangular bajo el escritorio. ¿la coges? (s/n)");
+                        String eleccion = Escaner.string();
+                        if (eleccion.equalsIgnoreCase("s")) {
+                            pausa(600);
+                            System.out.println("has recogido la llave triangular.");
+                            llave = true;
+                        }
+                    }
+                    break;
+
+                case 2:
+                    System.out.println("tocas lo que parece un mueble... abres un cajón y notas algo metálico. ¿lo coges? (s/n)");
+                    String eleccion2 = Escaner.string();
+                    if (eleccion2.equalsIgnoreCase("s")) {
+                        pausa(600);
+                        System.out.println("has cogido el objeto: una linterna.");
+                        linterna = true;
+                    }
+                    break;
+
+                case 3:
+                    System.out.println("te golpeas con algo grande y frío. no ves qué es.");
+                    if (linterna) {
+                        pausa(700);
+                        System.out.println("con la linterna ves un cuadro de luz cerrado con llave triangular.");
+                        if (llave) {
+                            pausa(600);
+                            System.out.println("¿quieres intentar abrirlo con la llave? (s/n)");
+                            String eleccion3 = Escaner.string();
+                            if (eleccion3.equalsIgnoreCase("s")) {
+                                pausa(700);
+                                System.out.println("abres la tapa... dentro hay una palanca. ¿quieres subirla? (s/n)");
+                                String eleccion4 = Escaner.string();
+                                if (eleccion4.equalsIgnoreCase("s")) {
+                                    pausa(1000);
+                                    System.out.println(GREEN + "\n💡 las luces se encienden de golpe. la sala brilla. estás en el vestíbulo." + RESET);
+                                    apagada = false;
+                                }
+                            }
+                        } else {
+                            System.out.println("parece que no tienes la llave adecuada.");
+                        }
+                    } else {
+                        System.out.println("no ves nada. tal vez una linterna ayudaría.");
+                    }
+                    break;
+            }
+        }
 
         // crear jugador y pasar al control por habitaciones
         Jugador j = new Jugador("jugador", Habitacion.habitaciones[0]);
