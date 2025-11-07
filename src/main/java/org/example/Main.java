@@ -22,7 +22,7 @@ public class Main {
 
         Habitacion.crearInfo();
 
-        // introducción llamativa
+
 
 
         System.out.println("Empieza el juego: sala oscura.");
