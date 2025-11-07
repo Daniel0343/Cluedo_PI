@@ -9,14 +9,14 @@ import java.io.FileWriter;
 import java.io.IOException;
 
 public class Guardado {
-    public void guardarPartida(String nombre, int puntos, String sala, Grabadora grabadora, Inventario inventario) {
-        DatoGuardado datoGuardado = new DatoGuardado(nombre, puntos, sala);
+    public static void guardarPartida(String nombre, String sala, Grabadora grabadora, Inventario inventario) {
+        DatoGuardado datoGuardado = new DatoGuardado(nombre, sala);
         guardarDato(datoGuardado);
         guardarGrabadora(grabadora);
         guardarInventario(inventario);
     }
 
-    public void guardarDato(DatoGuardado datoGuardado) {
+    public static void guardarDato(DatoGuardado datoGuardado) {
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
         try (FileWriter writer = new FileWriter("guardado/dato.json")) {
             gson.toJson(datoGuardado, writer);
@@ -24,7 +24,7 @@ public class Guardado {
             e.printStackTrace();
         }
     }
-    public DatoGuardado leerDato(){
+    public static DatoGuardado leerDato(){
         Gson gson = new Gson();
         try (FileReader reader = new FileReader("guardado/grabadora.json")) {
             DatoGuardado datoGuardado = gson.fromJson(reader, DatoGuardado.class);
@@ -35,7 +35,7 @@ public class Guardado {
         }
     }
 
-    public void guardarGrabadora(Grabadora grabadora) {
+    public static void guardarGrabadora(Grabadora grabadora) {
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
         try (FileWriter writer = new FileWriter("guardado/grabadora.json")) {
             gson.toJson(grabadora, writer);
@@ -43,7 +43,7 @@ public class Guardado {
             e.printStackTrace();
         }
     }
-    public Grabadora leerGrabadora(){
+    public static Grabadora leerGrabadora(){
         Gson gson = new Gson();
         try (FileReader reader = new FileReader("guardado/grabadora.json")) {
             Grabadora grabadora = gson.fromJson(reader, Grabadora.class);
@@ -53,7 +53,7 @@ public class Guardado {
             return null;
         }
     }
-    public void guardarInventario(Inventario inventario) {
+    public static void guardarInventario(Inventario inventario) {
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
         try (FileWriter writer = new FileWriter("guardado/inventario.json")) {
             gson.toJson(inventario, writer);
@@ -61,7 +61,7 @@ public class Guardado {
             e.printStackTrace();
         }
     }
-    public Inventario leerInventario(){
+    public static Inventario leerInventario(){
         Gson gson = new Gson();
         try (FileReader reader = new FileReader("guardado/inventario.json")) {
             Inventario inventario = gson.fromJson(reader, Inventario.class);

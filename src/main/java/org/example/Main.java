@@ -1,7 +1,11 @@
 package org.example;
 
+import org.example.BaseDatos.Usuario;
+import org.example.Dialogos.Grabadora;
 import org.example.Salas.Habitacion;
 
+import javax.xml.crypto.Data;
+import java.io.File;
 import java.util.Scanner;
 
 public class Main {
@@ -17,12 +21,93 @@ public class Main {
 
     public static void main(String[] args) {
 
+        Scanner scanner = new Scanner(System.in);
+        // crear jugador y pasar al control por habitaciones
+        Jugador j = new Jugador("jugador", Habitacion.habitaciones[0]);
+
+        String contrasena;
+        String nombre;
+        do {
+
+            System.out.println("-- Iniciar Sesión --");
+            System.out.println("Introduce tu nombre de usuario:");
+            nombre = scanner.nextLine();
+            System.out.println("Introduce tu contraseña: ");
+            contrasena = scanner.nextLine();
+
+            if (!Usuario.comprobarUsuario(nombre)) {
+
+                System.out.println("Usuario no registrado. Crea tu cuenta.");
+                Usuario.crearUsuario(nombre, contrasena);
+                System.out.println("Usuario creado.");
+                pausa(1000);
+
+            }
+
+            if (Usuario.validarUsuario(nombre, contrasena)) {
+                System.out.println("Usuario valido.");
+            }
+
+
+
+        } while (!Usuario.validarUsuario(nombre, contrasena));
+
+
+        System.out.println("-- Carga Partida --");
+        System.out.println("1. Nueva Partida");
+        System.out.println("2. Cargar Partida");
+        String opcion_cargar = scanner.nextLine();
+
+        do {
+
+
+            switch (opcion_cargar) {
+
+                case "1":
+
+                    System.out.println("Nueva Partida");
+                    break;
+
+
+                case "2":
+
+                    File fichero = new File("guardado");
+                    if (!fichero.exists()) {
+                        System.out.println("No existen partidas guardadas.");
+                        opcion_cargar = " ";
+                    }else {
+
+                        System.out.println("Partida encontrada");
+                        System.out.println("Cargando partida...");
+                        pausa(2000);
+
+                        DatoGuardado dg = Guardado.leerDato();
+                        Grabadora g = Guardado.leerGrabadora();
+                        Jugador i = Guardado.leerInventario();
+
+
+
+
+
+
+                    }
+
+
+            }
+
+        }while (!opcion_cargar.matches("1|2"));
+
+
+
+
+
+
+
+
 
         inicio_juego();
 
         Habitacion.crearInfo();
-
-
 
 
         System.out.println("Empieza el juego: sala oscura.");
@@ -92,8 +177,7 @@ public class Main {
             }
         }
 
-        // crear jugador y pasar al control por habitaciones
-        Jugador j = new Jugador("jugador", Habitacion.habitaciones[0]);
+
         while (true) {
             j.acciones();
         }
