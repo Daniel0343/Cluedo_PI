@@ -20,4 +20,7 @@ public class Grabadora {
     public Dialogo buscarDialogo(String nombre){
         return  dialogos.stream().filter(d -> d.getNombre().equals(nombre)).findFirst().orElse(null);
     }
+
+
+
 }
