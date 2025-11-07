@@ -15,7 +15,7 @@ public class Puzles {
     private static final String MAGENTA = "\u001B[35m";
     private static final String CYAN    = "\u001B[36m";
 
-      public static boolean puzle1(){
+      public static boolean puzle_billar(){
 
           Scanner scanner = new Scanner(System.in);
           String intento = "";
@@ -41,13 +41,13 @@ public class Puzles {
           System.out.println(BOLD + "\nREGLAS DEL CÓDIGO (Ordenadas 1-7, pero mezcladas en el texto):" + RESET);
 
           // Las reglas mezcladas
-          System.out.println(RED + "7.  El número de la TERCERA bola Sólida que entró. (Posición 7 del Código)" + RESET);
-          System.out.println("4.  La BOLA NEGRA que entró. (Posición 4 del Código)");
-          System.out.println(RED + "2.  El número de la PRIMERA bola Sólida que entró. (Posición 2 del Código)" + RESET);
-          System.out.println("5.  El PRIMER dígito de la SEGUNDA bola Rayada. (Posición 5 del Código)");
-          System.out.println(RED + "1.  La SEGUNDA bola Sólida que entró. (Posición 1 del Código)" + RESET);
-          System.out.println("3.  El SEGUNDO dígito de la ÚLTIMA bola Rayada. (Posición 3 del Código)");
-          System.out.println(RED + "6.  El número de la PRIMERA bola que entró (de toda la secuencia). (Posición 6 del Código)" + RESET);
+          System.out.println(RED + "El número de la TERCERA bola Sólida que entró. (Posición 7 del Código)" + RESET);
+          System.out.println("La BOLA NEGRA que entró. (Posición 4 del Código)");
+          System.out.println(RED + "El número de la PRIMERA bola Sólida que entró. (Posición 2 del Código)" + RESET);
+          System.out.println("El PRIMER dígito de la SEGUNDA bola Rayada. (Posición 5 del Código)");
+          System.out.println(RED + "La SEGUNDA bola Sólida que entró. (Posición 1 del Código)" + RESET);
+          System.out.println("El SEGUNDO dígito de la ÚLTIMA bola Rayada. (Posición 3 del Código)");
+          System.out.println(RED + "El número de la PRIMERA bola que entró (de toda la secuencia). (Posición 6 del Código)" + RESET);
           System.out.println(GREEN + "---------------------------------------------------------------------" + RESET);
 
 
@@ -81,7 +81,7 @@ public class Puzles {
 
 
 
-    public static boolean puzle2(){
+    public static boolean puzzle_enredaderas(){
         ArrayList<String> resultado = new ArrayList<>();
         for (int i = 1; i <= 5; i++) {
             resultado.add("Enrredadera "+i);
