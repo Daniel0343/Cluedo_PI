@@ -4,12 +4,22 @@ package org.example.Dialogos;
 public class Dialogo {
     private String nombre;
     private String dialogo;
+    private String dialogo_lupa;
     private TipoDialogo tipo;
 
-    public Dialogo(String nombre, String dialogo, TipoDialogo tipo) {
+    public Dialogo(String nombre, String dialogo, String dialogo_lupa, TipoDialogo tipo) {
         this.nombre = nombre;
         this.dialogo = dialogo;
+        this.dialogo_lupa = dialogo_lupa;
         this.tipo = tipo;
+    }
+
+    public String getDialogo_lupa() {
+        return dialogo_lupa;
+    }
+
+    public void setDialogo_lupa(String dialogo_lupa) {
+        this.dialogo_lupa = dialogo_lupa;
     }
 
     public String getNombre() {

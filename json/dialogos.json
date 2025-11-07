@@ -1,32 +1,38 @@
 [
   {
     "nombre": "Candelabro",
-    "dialogo": "Este candelabro es bastante pesado. Podría haber sido utilizado para golpear a alguien con bastante fuerza. Al examinarlo con la lupa descubres que ha sido cogido por alguien, pero no se ve ninguna pista más.",
+    "dialogo": "Este candelabro es bastante pesado. Podría haber sido utilizado para golpear a alguien con bastante fuerza. ",
+    "dialogo_lupa": "Al examinarlo con la lupa descubres que ha sido cogido por alguien, pero no se ve ninguna pista más.",
     "tipo": "ARMA"
   },
   {
     "nombre": "Cuchillo",
-    "dialogo": "Este cuchillo está afilado como una navaja. Podría haber sido utilizado para apuñalar a alguien. Al examinarlo con la lupa descubres que tiene las huellas del coronel Rubio.",
+    "dialogo": "Este cuchillo está afilado como una navaja. Podría haber sido utilizado para apuñalar a alguien. ",
+    "dialogo_lupa": "Al examinarlo con la lupa descubres que tiene las huellas del coronel Rubio." ,
     "tipo": "ARMA"
   },
   {
     "nombre": "Tubería",
-    "dialogo": "Esta tubería parece haber sido utilizada recientemente. Podría haber dejado marcas en la víctima. Al examinarla con la lupa descubres que tiene huellas de tierra del invernadero.",
+    "dialogo": "Esta tubería parece haber sido utilizada recientemente. Podría haber dejado marcas en la víctima. ",
+    "dialogo_lupa": "Al examinarla con la lupa descubres que tiene huellas de tierra del invernadero.",
     "tipo": "ARMA"
   },
   {
     "nombre": "Cuerda",
-    "dialogo": "Esta cuerda es fuerte y resistente, pero algo gastada. Al examinarla con la lupa descubres que tiene un trozo de uña roja.",
+    "dialogo": "Esta cuerda es fuerte y resistente, pero algo gastada.",
+    "dialogo_lupa": "Al examinarla con la lupa descubres que tiene un trozo de uña roja.",
     "tipo": "ARMA"
   },
   {
     "nombre": "Revólver",
-    "dialogo": "Este revólver está cargado. Al examinarlo con la lupa descubres que no ha sido disparado, pero al ser muy viejo no encuentras nada más.",
+    "dialogo": "Este revólver está cargado. ",
+    "dialogo_lupa": "Al examinarlo con la lupa descubres que no ha sido disparado, pero al ser muy viejo no encuentras nada más.",
     "tipo": "ARMA"
   },
   {
     "nombre": "Veneno",
-    "dialogo": "Podría haber sido administrado en la comida o bebida de la víctima. Al examinarlo con la lupa descubres que el frasco está intacto, parece nuevo.",
+    "dialogo": "Podría haber sido administrado en la comida o bebida de la víctima. ",
+    "dialogo_lupa": "Al examinarlo con la lupa descubres que el frasco está intacto, parece nuevo.",
     "tipo": "ARMA"
   },
   {
