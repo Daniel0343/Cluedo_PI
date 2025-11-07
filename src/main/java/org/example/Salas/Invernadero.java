@@ -3,6 +3,7 @@ package org.example.Salas;
 import org.example.Escaner;
 import org.example.Jugador;
 import org.example.Objetos.Objeto;
+import org.example.Pausa;
 import org.example.Puzles;
 
 public class Invernadero extends Habitacion {
@@ -77,6 +78,11 @@ public class Invernadero extends Habitacion {
                 break;
 
             case 2:
+                System.out.println("Ves al fondo de el invernadero, un monton de enredaderas en el suelo");
+                Pausa.esperar(1000);
+                System.out.println("-- PUZZLE -- ");
+                Pausa.esperar(1000);
+
                 if (!puzzleResuelto) {
                     if (Escaner.sn()) {
                         if (Puzles.puzzle_enredaderas()) {

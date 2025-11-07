@@ -92,10 +92,10 @@ public class Puzles {
         String resultadotexto = "12345"; //String.join("", resultado);
         Collections.shuffle(resultado);
         String resultadotexto2 = String.join("", resultado);
-        System.out.println("Ordena las siguientes enrredaderas: " + resultadotexto2);
+        System.out.println("Ordena las siguientes enredaderas: " + resultadotexto2);
         String seguir = "";
         do{
-            System.out.print("Introduce el orden correcto de las enrredaderas, con este formato: 51324 : ");
+            System.out.print("Introduce el orden correcto de las enredaderas, con este formato: 51324 : ");
             String introducido =  sc.nextLine();
             if (introducido.equals(resultadotexto)){
                 System.out.println("Has acertado");

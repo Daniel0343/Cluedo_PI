@@ -68,6 +68,7 @@ public class SalaBillar extends Habitacion{
                 System.out.println("Entiendes su argumento pero le preguntas que hacía aquí cuando se produjo el apagón");
                 Pausa.esperar(1000);
                 System.out.println(p_orquidea.getDialogo_lupa());
+                g.addDialogo(p_orquidea.getDialogo_lupa());
 
                 Pausa.esperar(1000);
 
@@ -92,6 +93,7 @@ public class SalaBillar extends Habitacion{
                 System.out.println("Entiendes su argumento pero le preguntas que hacía aquí cuando se produjo el apagón");
                 Pausa.esperar(1000);
                 System.out.println(p_rubio.getDialogo_lupa());
+                g.addDialogo(p_rubio.getDialogo_lupa());
 
                 Pausa.esperar(1000);
 
