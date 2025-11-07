@@ -88,7 +88,7 @@ public class Puzles {
             resultado.add("Enrredadera "+i);
         }
         Collections.shuffle(resultado);
-        String resultadotexto = String.join("", resultado);
+        String resultadotexto = "12345"; //String.join("", resultado);
         Collections.shuffle(resultado);
         String resultadotexto2 = String.join("", resultado);
         System.out.println("Ordena las siguientes enrredaderas: " + resultadotexto2);

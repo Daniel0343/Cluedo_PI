@@ -7,8 +7,8 @@ public abstract class Items {
 
     public Items(String nombre) {
         this.nombre = nombre;
-        this.descripcion = Descripciones.getDescripciones().stream().filter(d -> d.getNombre().equals(nombre)).findFirst().get().getDescripcion();
-        this.tipo = Descripciones.getDescripciones().stream().filter(d -> d.getNombre().equals(nombre)).findFirst().get().getTipo();
+        this.descripcion = Descripciones.getDescripciones().stream().filter(d -> d.getNombre().equalsIgnoreCase(nombre)).findFirst().get().getDescripcion();
+        this.tipo = Descripciones.getDescripciones().stream().filter(d -> d.getNombre().equalsIgnoreCase(nombre)).findFirst().get().getTipo();
     }
     public String getNombre() {
         return nombre;
