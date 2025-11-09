@@ -36,7 +36,7 @@ public class Salon extends Habitacion{
     public void acciones(Jugador j) {
         Scanner sc = new Scanner(System.in);
 
-        Grabadora g = new Grabadora();
+        Grabadora g = j.grabadora;
         System.out.println("Hablar con Prado");
         System.out.println("Inspeccionar retrato Dr.Black");
         System.out.println("Inspeccionar mesita del salón");
@@ -89,7 +89,7 @@ public class Salon extends Habitacion{
                 System.out.println("Introduce el codigo");
                 String us = sc.nextLine();
 
-                if (us.matches("12031950")){
+                if (us.matches(resultado)){
 
                     System.out.println("-- PUZZLE RESUELTO --");
 

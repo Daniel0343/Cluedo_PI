@@ -34,7 +34,7 @@ public class Sotano extends Habitacion{
 
         System.out.println("Bajas an lugar frío, húmedo y oscuro. Huele a moho y a tierra. Hay cajas viejas y herramientas.");
         Pausa.esperar(1000);
-        Grabadora g = new Grabadora();
+        Grabadora g = j.grabadora;
 
         System.out.println("\nElige una de las opciones:");
         System.out.println("1 - Hablar con el Profesor Mora");

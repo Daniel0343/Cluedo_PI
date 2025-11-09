@@ -1,6 +1,7 @@
 package org.example;
 
 import org.example.BaseDatos.Puntuacion;
+import org.example.BaseDatos.Puntuaciones;
 import org.example.BaseDatos.Usuario;
 import org.example.Dialogos.Grabadora;
 import org.example.Salas.Habitacion;
@@ -254,12 +255,22 @@ public class Main {
         pausa(800);
     }
 
-    public static void finalJuego(String nombre, Grabadora g, Inventario i, boolean acertado) {
+    public static void finalJuego(String nombre, Grabadora g, Inventario i, boolean acertado_asesino, boolean acertado_arma, boolean acertado_lugar) {
         int puntos = g.getDialogos().size() + i.getInventario().size();
-        if (acertado){
+        if (acertado_asesino){
+            puntos += 500;
+        }
+        if (acertado_lugar){
+            puntos += 500;
+        }
+        if (acertado_arma){
             puntos += 500;
         }
         Puntuacion.subirPuntuacion(nombre, puntos);
+        Pausa.esperar(1000);
+        System.out.println("Top - 10");
+        Pausa.esperar(1000);
+        Puntuaciones.mostrarPuntuaciones();
     }
 
 

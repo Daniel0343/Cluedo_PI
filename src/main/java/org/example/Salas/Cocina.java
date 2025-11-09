@@ -1,6 +1,5 @@
 package org.example.Salas;
 
-import org.example.Dialogos.Dialogo;
 import org.example.Dialogos.Grabadora;
 import org.example.Escaner;
 import org.example.Jugador;

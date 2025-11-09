@@ -24,6 +24,8 @@ public class Jugador {
         System.out.println("1 - Acciones en la habitación");
         System.out.println("2 - Cambiar de habitación");
         System.out.println("3 - Ver inventario");
+        System.out.println("4 - Consultar grabadora");
+        System.out.println("5 - Salir y Guardar Partida");
 
         int opcion = Escaner.entero();
 
@@ -40,6 +42,18 @@ public class Jugador {
                 mostrarInventario();
                 break;
 
+            case 4:
+                mostrarGrabadora();
+
+                break;
+
+            case 5:
+
+                Guardado.guardarPartida(nombre,ubicacion,grabadora,inventario);
+                System.exit(1);
+
+                break;
+
             default:
                 System.out.println("Valor incorrecto, vuelve a intentarlo.");
                 acciones();
@@ -47,7 +61,7 @@ public class Jugador {
         }
     }
 
-    private void mostrarInventario() {
+    public void mostrarInventario() {
         System.out.println("\nInventario:");
         if (inventario.getInventario().isEmpty()) {
             System.out.println("(vacío)");
@@ -56,4 +70,19 @@ public class Jugador {
         }
         System.out.println();
     }
+
+    public void mostrarGrabadora() {
+        System.out.println("\nGrabadora");
+        if (grabadora.getDialogos().isEmpty()) {
+            System.out.println("La grabadora no tiene dialgos");
+        } else {
+
+            grabadora.getDialogos().forEach(System.out::println);
+
+        }
+
+
+    }
+
+
 }
