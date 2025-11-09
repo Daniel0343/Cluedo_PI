@@ -4,6 +4,7 @@ import org.example.BaseDatos.Puntuacion;
 import org.example.BaseDatos.Puntuaciones;
 import org.example.BaseDatos.Usuario;
 import org.example.Dialogos.Grabadora;
+import org.example.Objetos.Objeto;
 import org.example.Salas.Habitacion;
 import org.example.Salas.Invernadero;
 
@@ -124,8 +125,6 @@ public class Main {
         System.out.println("Empieza el juego: sala oscura.");
         pausa(1000);
         boolean apagada = true;
-        boolean linterna = false;
-        boolean llave = false;
 
         while (apagada) {
             System.out.println("\nelige una opción:");
@@ -136,35 +135,53 @@ public class Main {
             int opcion = Escaner.entero();
             switch (opcion) {
                 case 1:
-                    System.out.println("has chocado contra algo, no distingues bien qué es.");
-                    if (linterna) {
+                    System.out.println("Has chocado contra algo, no distingues bien qué es.");
+                    Pausa.esperar(1000);
+
+
+                    if (j.inventario.contieneItem("Linterna")) {
                         pausa(800);
-                        System.out.println("con la linterna ves una llave triangular bajo el escritorio. ¿la coges? (s/n)");
+                        System.out.println("Con la linterna ves una llave triangular bajo el escritorio. ¿la coges? (s/n)");
                         String eleccion = Escaner.string();
                         if (eleccion.equalsIgnoreCase("s")) {
                             pausa(600);
-                            System.out.println("has recogido la llave triangular.");
-                            llave = true;
+                            System.out.println("has recogido la llave Triangular.");
+                            if (!j.inventario.contieneItem("Llave Triangular")){
+                                j.inventario.agregarItem(new Objeto("Llave Triangular"));
+                                Pausa.esperar(1000);
+                                System.out.println("Has cogido la llave triangular");
+                            }else {
+                                Pausa.esperar(1000);
+                                System.out.println("Ya tienes la Llave Triangular.");
+                            }
                         }
+                    }else {
+                        System.out.println("Necesitas un objeto luminoso para poder verlo");
+                        Pausa.esperar(1000);
                     }
                     break;
 
                 case 2:
-                    System.out.println("tocas lo que parece un mueble... abres un cajón y notas algo metálico. ¿lo coges? (s/n)");
-                    String eleccion2 = Escaner.string();
-                    if (eleccion2.equalsIgnoreCase("s")) {
-                        pausa(600);
-                        System.out.println("has cogido el objeto: una linterna.");
-                        linterna = true;
+                    System.out.println("Tocas lo que parece un mueble... abres un cajón y notas algo metálico. ¿lo coges? (s/n)");
+                    if (Escaner.sn()){
+                        if (!j.inventario.contieneItem("Linterna")){
+                            j.inventario.agregarItem(new Objeto("Linterna"));
+                            Pausa.esperar(1000);
+                            System.out.println("Has cogido la linterna");
+                        }else {
+                            Pausa.esperar(1000);
+                            System.out.println("Ya tienes la linterna");
+                        }
+
                     }
                     break;
 
                 case 3:
                     System.out.println("te golpeas con algo grande y frío. no ves qué es.");
-                    if (linterna) {
+                    if (j.inventario.contieneItem("Linterna")) {
                         pausa(700);
                         System.out.println("con la linterna ves un cuadro de luz cerrado con llave triangular.");
-                        if (llave) {
+                        if (j.inventario.contieneItem("Llave Triangular")) {
                             pausa(600);
                             System.out.println("¿quieres intentar abrirlo con la llave? (s/n)");
                             String eleccion3 = Escaner.string();
@@ -179,10 +196,10 @@ public class Main {
                                 }
                             }
                         } else {
-                            System.out.println("parece que no tienes la llave adecuada.");
+                            System.out.println("Parece que no tienes la llave adecuada.");
                         }
                     } else {
-                        System.out.println("no ves nada. tal vez una linterna ayudaría.");
+                        System.out.println("No ves nada. Tal vez una linterna ayudaría.");
                     }
                     break;
             }

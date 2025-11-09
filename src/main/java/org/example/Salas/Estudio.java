@@ -225,16 +225,6 @@ public class Estudio extends Habitacion {
 
 
 
-
-
-
-
-
-
-
-
-
-
                         }
 
 
