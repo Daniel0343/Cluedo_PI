@@ -27,7 +27,6 @@ public class Main {
         Habitacion.crearInfo();
         // crear jugador y pasar al control por habitaciones
         Jugador j = null;
-        Grabadora g = new Grabadora();
         String contrasena;
         String nombre;
         do {
@@ -86,8 +85,8 @@ public class Main {
                         pausa(2000);
 
                         DatoGuardado dg = Guardado.leerDato();
-                        g = Guardado.leerGrabadora();
                         j = new Jugador(dg.getNombre(),dg.getSala());
+                        j.grabadora = Guardado.leerGrabadora();
                         j.inventario = Guardado.leerInventario();
                     }
                     break;
@@ -255,8 +254,11 @@ public class Main {
         pausa(800);
     }
 
-    public static void subirPuntuacion(String nombre, Grabadora g, Inventario i) {
+    public static void finalJuego(String nombre, Grabadora g, Inventario i, boolean acertado) {
         int puntos = g.getDialogos().size() + i.getInventario().size();
+        if (acertado){
+            puntos += 500;
+        }
         Puntuacion.subirPuntuacion(nombre, puntos);
     }
 

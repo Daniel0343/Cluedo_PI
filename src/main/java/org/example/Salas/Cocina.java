@@ -35,7 +35,7 @@ public class Cocina extends Habitacion{
 
     @Override
     public void acciones(Jugador j) {
-        Grabadora g = new Grabadora();
+        Grabadora g = j.grabadora;
 
         System.out.println("\nElige una de las opciones:");
         System.out.println("1 - Hablar con Celeste");

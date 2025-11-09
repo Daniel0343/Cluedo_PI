@@ -1,11 +1,13 @@
 package org.example;
 
+import org.example.Dialogos.Grabadora;
 import org.example.Salas.Habitacion;
 
 public class Jugador {
     String nombre;
     Habitacion ubicacion;
     public Inventario inventario;
+    public Grabadora grabadora;
 
     public Jugador(String nombre, Habitacion vestibulo) {
         this.nombre = nombre;
