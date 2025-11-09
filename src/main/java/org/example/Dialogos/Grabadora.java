@@ -3,7 +3,7 @@ package org.example.Dialogos;
 import java.util.ArrayList;
 
 public class Grabadora {
-    ArrayList<String> dialogos;
+    ArrayList<String> dialogos = new ArrayList<>();
 
     public Grabadora() {
         dialogos = new ArrayList<>();

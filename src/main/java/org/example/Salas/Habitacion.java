@@ -8,8 +8,8 @@ import java.util.ArrayList;
 public abstract class Habitacion {
     String nombre;
     ArrayList<Object> opciones;
-    Habitacion [] accesos;
-    static public Habitacion[] habitaciones;
+    transient Habitacion [] accesos;
+    transient static public Habitacion[] habitaciones;
     boolean descubierto = false;
 
     public Habitacion(String nombre) {
@@ -74,6 +74,14 @@ public abstract class Habitacion {
 
         return habitaciones;
     }
+    public boolean isDescubierta() {
+        return descubierto;
+    }
+
+    public void setDescubierta(boolean descubierto) {
+        this.descubierto = descubierto;
+    }
 
     public abstract boolean acciones(Jugador j);
+
 }

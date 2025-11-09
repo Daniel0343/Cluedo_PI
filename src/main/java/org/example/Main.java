@@ -9,6 +9,7 @@ import org.example.Salas.Invernadero;
 
 import javax.xml.crypto.Data;
 import java.io.File;
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Main {
@@ -49,6 +50,8 @@ public class Main {
 
             if (Usuario.validarUsuario(nombre, contrasena)) {
                 System.out.println("Usuario valido.");
+            } else {
+                System.out.println("Usuario incorrecto.");
             }
 
 
@@ -86,9 +89,26 @@ public class Main {
                         pausa(2000);
 
                         DatoGuardado dg = Guardado.leerDato();
-                        j = new Jugador(dg.getNombre(),dg.getSala());
-                        j.grabadora = Guardado.leerGrabadora();
-                        j.inventario = Guardado.leerInventario();
+                        Habitacion[] todas = Habitacion.crearInfo();
+
+                        if (dg.getHabitacionesDescubiertas() != null) {
+                            for (Habitacion h : todas) {
+                                Boolean descubierto = dg.getHabitacionesDescubiertas().get(h.getNombre());
+                                if (descubierto != null) {
+                                    h.setDescubierta(descubierto);
+                                }
+                            }
+                        }
+
+                        Habitacion salaActual = Arrays.stream(todas)
+                                .filter(h -> h.getNombre().equals(dg.getNombreSalaActual()))
+                                .findFirst()
+                                .orElse(todas[0]);
+
+                        j = new Jugador(dg.getNombreJugador(), salaActual);
+
+
+
                     }
                     break;
 

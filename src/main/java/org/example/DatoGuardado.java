@@ -1,26 +1,34 @@
 package org.example;
 
-
 import org.example.Salas.Habitacion;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class DatoGuardado {
-    private String nombre;
+    private String nombreJugador;
+    private String nombreSalaActual;
+    private Map<String, Boolean> habitacionesDescubiertas;
 
-    private Habitacion sala;
+    public DatoGuardado(String nombreJugador, Habitacion salaActual, Habitacion[] todas) {
+        this.nombreJugador = nombreJugador;
+        this.nombreSalaActual = salaActual.getNombre();
+        this.habitacionesDescubiertas = new HashMap<>();
 
-    public DatoGuardado(String nombre, Habitacion sala) {
-        this.nombre = nombre;
-
-        this.sala = sala;
+        for (Habitacion h : todas) {
+            habitacionesDescubiertas.put(h.getNombre(), h.isDescubierta());
+        }
     }
 
-    public String getNombre() {
-        return nombre;
+    public Map<String, Boolean> getHabitacionesDescubiertas() {
+        return habitacionesDescubiertas;
     }
 
+    public String getNombreJugador() {
+        return nombreJugador;
+    }
 
-
-    public Habitacion getSala() {
-        return sala;
+    public String getNombreSalaActual() {
+        return nombreSalaActual;
     }
 }
