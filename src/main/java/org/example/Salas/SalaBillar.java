@@ -33,7 +33,7 @@ public class SalaBillar extends Habitacion{
         return this;
     }
     @Override
-    public void acciones(Jugador j) {
+    public boolean acciones(Jugador j) {
         Grabadora g = j.grabadora;
 
         System.out.println("\nElige una de las opciones:");
@@ -177,6 +177,8 @@ public class SalaBillar extends Habitacion{
 
 
         }
+
+        return false;
 
 
 

@@ -19,7 +19,7 @@ public class Jugador {
         this.ubicacion = nuevaUbi;
     }
 
-    public void acciones() {
+    public boolean acciones() {
         System.out.println("¿Qué quieres hacer en " + ubicacion.getNombre() + "?");
         System.out.println("1 - Acciones en la habitación");
         System.out.println("2 - Cambiar de habitación");
@@ -28,10 +28,10 @@ public class Jugador {
         System.out.println("5 - Salir y Guardar Partida");
 
         int opcion = Escaner.entero();
-
+        boolean respuesta = false;
         switch (opcion) {
             case 1:
-                ubicacion.acciones(this);
+                respuesta = ubicacion.acciones(this);
                 break;
 
             case 2:
@@ -59,6 +59,7 @@ public class Jugador {
                 acciones();
                 break;
         }
+        return respuesta;
     }
 
     public void mostrarInventario() {

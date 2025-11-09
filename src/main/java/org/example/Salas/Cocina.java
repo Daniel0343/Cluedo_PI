@@ -33,7 +33,7 @@ public class Cocina extends Habitacion{
     }
 
     @Override
-    public void acciones(Jugador j) {
+    public boolean acciones(Jugador j) {
         Grabadora g = j.grabadora;
 
         System.out.println("\nElige una de las opciones:");
@@ -113,7 +113,7 @@ public class Cocina extends Habitacion{
 
 
 
-
+        return false;
     }
 
 

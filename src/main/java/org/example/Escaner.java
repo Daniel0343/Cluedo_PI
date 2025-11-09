@@ -17,18 +17,19 @@ public class Escaner {
     }
 
     public static boolean sn () {
-
+        String eleccion = "";
         do {
             System.out.print("(s/n)");
-            String eleccion = Escaner.string();
+            eleccion = Escaner.string();
             if (eleccion.equals("n") || eleccion.equals("s")) {
                 if (eleccion.equals("s")) {
-
                     return true;
+                } else {
+                    return false;
                 }
-                return false;
             }
-        } while (true);
+        } while (!eleccion.matches("s|n"));
+        return false;
     }
 
 }

@@ -50,7 +50,7 @@ public class Invernadero extends Habitacion {
     }
 
     @Override
-    public void acciones(Jugador j) {
+    public boolean acciones(Jugador j) {
 
         System.out.println("El aire se vuelve denso y húmedo, lleno del olor a tierra mojada y flores exóticas.");
         System.out.println("La luz de la luna apenas se filtra por el techo de cristal. Notas un rastro de tierra que no pertenece a las macetas.\n");
@@ -134,5 +134,6 @@ public class Invernadero extends Habitacion {
                 System.out.println("Opción inválida, vuelve a intentarlo.");
                 break;
         }
+        return false;
     }
 }

@@ -32,7 +32,7 @@ public class Vestibulo extends Habitacion{
     }
 
     @Override
-    public void acciones(Jugador j) {
-
+    public boolean acciones(Jugador j) {
+        return false;
     }
 }

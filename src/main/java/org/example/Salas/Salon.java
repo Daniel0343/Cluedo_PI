@@ -33,7 +33,7 @@ public class Salon extends Habitacion{
     }
 
     @Override
-    public void acciones(Jugador j) {
+    public boolean acciones(Jugador j) {
         Scanner sc = new Scanner(System.in);
 
         Grabadora g = j.grabadora;
@@ -131,7 +131,7 @@ public class Salon extends Habitacion{
 
         }
 
-
+        return false;
 
     }
 }

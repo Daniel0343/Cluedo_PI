@@ -30,7 +30,7 @@ public class Sotano extends Habitacion{
         return this;
     }
     @Override
-    public void acciones(Jugador j) {
+    public boolean acciones(Jugador j) {
 
         System.out.println("Bajas an lugar frío, húmedo y oscuro. Huele a moho y a tierra. Hay cajas viejas y herramientas.");
         Pausa.esperar(1000);
@@ -147,7 +147,7 @@ public class Sotano extends Habitacion{
 
         }
 
-
+        return false;
 
 
     }

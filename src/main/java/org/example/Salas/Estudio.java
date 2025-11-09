@@ -27,7 +27,7 @@ public class Estudio extends Habitacion {
     }
 
     @Override
-    public void acciones(Jugador j) {
+    public boolean acciones(Jugador j) {
         System.out.println("\nElige una de las opciones:");
         System.out.println("1 - Inspeccionar armadura");
         System.out.println("2 - Inspeccionar escritorio del Sr. Black");
@@ -116,6 +116,8 @@ public class Estudio extends Habitacion {
                     System.out.println("Te das cuenta que al encontrar el cuerpo sin vida del SR Black");
                     Pausa.esperar(1000);
                     System.out.println("Y piensas que ya tienes que dar por acabado el caso para encontrar al asesino");
+
+                    String opcion_resolver = "";
                     do {
 
                         System.out.println("Elige una de estas opciones antes de dar tu testimonio");
@@ -128,7 +130,7 @@ public class Estudio extends Habitacion {
                         System.out.println("3- Escuchar Grabadora");
                         System.out.println("4- Resolver el misterio(No retorno)");
 
-                        String opcion_resolver = Escaner.string();
+                        opcion_resolver = Escaner.string();
 
                         switch (opcion_resolver) {
 
@@ -212,6 +214,7 @@ public class Estudio extends Habitacion {
                                 }
 
                                 Main.finalJuego(nombre,j.grabadora,j.inventario, asesino_boolean,arma_boolean,lugar_boolean);
+                                return true;
 
 
 
@@ -235,7 +238,7 @@ public class Estudio extends Habitacion {
                         }
 
 
-                    }while ()
+                    }while (!opcion_resolver.matches("4"));
 
 
 
@@ -254,5 +257,6 @@ public class Estudio extends Habitacion {
                 System.out.println("Opción inválida, vuelve a intentarlo.");
                 break;
         }
+        return false;
     }
 }

@@ -168,10 +168,10 @@ public class Main {
             }
         }
 
-
-        while (true) {
-            j.acciones();
-        }
+        boolean salir = false;
+        do{
+            salir = j.acciones();
+        }while (!salir);
     }
 
 

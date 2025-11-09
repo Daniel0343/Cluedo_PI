@@ -75,5 +75,5 @@ public abstract class Habitacion {
         return habitaciones;
     }
 
-    public abstract void acciones(Jugador j);
+    public abstract boolean acciones(Jugador j);
 }
