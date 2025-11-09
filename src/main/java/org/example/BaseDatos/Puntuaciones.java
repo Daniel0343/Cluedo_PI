@@ -8,7 +8,7 @@ public class Puntuaciones {
     public static void mostrarPuntuaciones() {
         try {
             Statement statement = ConexionBD.getConnection().createStatement();
-            ResultSet resultSet = statement.executeQuery("SELECT * FROM puntuaciones ORDER BY id DESC LIMIT 10");
+            ResultSet resultSet = statement.executeQuery("SELECT * FROM puntuaciones ORDER BY 3 DESC LIMIT 10");
             System.out.printf("%-5s %-20s %-10s\n", "id", "nombre", "puntos");
             System.out.println("-------------------------------------------");
             while (resultSet.next()) {
