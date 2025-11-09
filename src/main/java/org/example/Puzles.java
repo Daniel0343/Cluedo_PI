@@ -71,7 +71,6 @@ public class Puzles {
                   puzleResuelto = true; // Termina el bucle
               } else {
                   System.out.println(BOLD + RED + "Código incorrecto. Inténtalo de nuevo." + RESET);
-
               }
           }
 
@@ -85,17 +84,17 @@ public class Puzles {
     public static boolean puzzle_enredaderas(){
         Scanner sc = new Scanner(System.in);
         ArrayList<String> resultado = new ArrayList<>();
-        for (int i = 1; i <= 5; i++) {
+        for (int i = 1; i <= 3; i++) {
             resultado.add("Enrredadera "+i);
         }
         Collections.shuffle(resultado);
-        String resultadotexto = "12345"; //String.join("", resultado);
+        String resultadotexto = String.join("", resultado);
         Collections.shuffle(resultado);
         String resultadotexto2 = String.join("", resultado);
-        System.out.println("Ordena las siguientes enredaderas: " + resultadotexto2);
+        System.out.println("Ordena las siguientes enrredaderas: " + resultadotexto2);
         String seguir = "";
         do{
-            System.out.print("Introduce el orden correcto de las enredaderas, con este formato: 51324 : ");
+            System.out.print("Introduce el orden correcto de las enrredaderas, con este formato: 132 : ");
             String introducido =  sc.nextLine();
             if (introducido.equals(resultadotexto)){
                 System.out.println("Has acertado");
@@ -109,6 +108,6 @@ public class Puzles {
                 }
             }
         }while(!seguir.equals("n"));
-        return  true;
+        return  false;
     }
 }
