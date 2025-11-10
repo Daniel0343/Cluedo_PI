@@ -15,7 +15,7 @@ public class Jugador {
         this.inventario = new Inventario(); // cada jugador tiene su propio inventario
     }
 
-    private void setUbicanción(Habitacion nuevaUbi) {
+    private void setUbicacion(Habitacion nuevaUbi) {
         this.ubicacion = nuevaUbi;
     }
 
@@ -38,7 +38,7 @@ public class Jugador {
                 break;
 
             case 2:
-                setUbicanción(ubicacion.movimiento());
+                setUbicacion(ubicacion.movimiento());
                 break;
 
             case 3:

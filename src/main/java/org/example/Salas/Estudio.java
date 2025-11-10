@@ -217,14 +217,6 @@ public class Estudio extends Habitacion {
                                 return true;
 
 
-
-
-
-
-
-
-
-
                         }
 
 

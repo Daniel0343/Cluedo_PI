@@ -33,6 +33,9 @@ public class Vestibulo extends Habitacion{
 
     @Override
     public boolean acciones(Jugador j) {
+
+
+
         return false;
     }
 }

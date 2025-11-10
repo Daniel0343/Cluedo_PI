@@ -24,7 +24,7 @@
     "tipo": "ARMA"
   },
   {
-    "nombre": "Revólver",
+    "nombre": "Revolver",
     "dialogo": "Este revólver está cargado. ",
     "dialogo_lupa": "Al examinarlo con la lupa descubres que no ha sido disparado, pero al ser muy viejo no encuentras nada más.",
     "tipo": "ARMA"

@@ -120,7 +120,7 @@ public class Main {
 
 
 
-        inicio_juego();
+            inicio_juego();
 
         System.out.println("Empieza el juego: sala oscura.");
         pausa(1000);
@@ -145,7 +145,6 @@ public class Main {
                         String eleccion = Escaner.string();
                         if (eleccion.equalsIgnoreCase("s")) {
                             pausa(600);
-                            System.out.println("has recogido la llave Triangular.");
                             if (!j.inventario.contieneItem("Llave Triangular")){
                                 j.inventario.agregarItem(new Objeto("Llave Triangular"));
                                 Pausa.esperar(1000);

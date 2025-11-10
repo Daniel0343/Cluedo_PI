@@ -12,7 +12,7 @@ public class Usuario {
             ResultSet resultSet = statement.executeQuery(query);
 
             while(resultSet.next()){
-                if (nombre.equals(resultSet.getString(1))){
+                if (nombre.equalsIgnoreCase(resultSet.getString(1))){
                     return true;
                 }
             }
@@ -26,7 +26,7 @@ public class Usuario {
 
     public static boolean crearUsuario(String nombre, String contrasena){
         //Crear el nuevo usuario en la base de datos
-        if (!comprobarUsuario(nombre)){
+        if (!comprobarUsuario(nombre.toLowerCase())){
             try {
                 PreparedStatement statement = ConexionBD.getConnection().prepareStatement("INSERT INTO usuarios (nombre, contrasena) VALUES (?, ?)");
                 statement.setString(1, nombre);
@@ -51,7 +51,7 @@ public class Usuario {
             ResultSet resultSet = statement.executeQuery(query);
 
             while(resultSet.next()){
-                if (nombre.equals(resultSet.getString(1)) &&  contrasena.equals(resultSet.getString(2))){
+                if (nombre.equalsIgnoreCase(resultSet.getString(1)) &&  contrasena.equals(resultSet.getString(2))){
                     return true;
                 }
             }

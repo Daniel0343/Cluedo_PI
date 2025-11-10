@@ -85,7 +85,7 @@ public class Puzles {
         Scanner sc = new Scanner(System.in);
         ArrayList<String> resultado = new ArrayList<>();
         for (int i = 1; i <= 3; i++) {
-            resultado.add("Enrredadera "+i);
+            resultado.add(""+i);
         }
         Collections.shuffle(resultado);
         String resultadotexto = String.join("", resultado);
