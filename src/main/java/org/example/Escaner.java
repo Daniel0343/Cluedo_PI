@@ -12,8 +12,16 @@ public class Escaner {
     }
     public static int entero(){
         Scanner scanner = new Scanner(System.in);
-
-        return scanner.nextInt();
+        int devuelto;
+        String opcion;
+        do{
+            opcion = scanner.nextLine();
+            if(opcion.matches("\\d+")){
+                System.out.print("Introduce un numero: ");
+            }
+        }while (!opcion.matches("\\d+"));
+        devuelto = Integer.parseInt(opcion);
+        return devuelto;
     }
 
     public static boolean sn () {
