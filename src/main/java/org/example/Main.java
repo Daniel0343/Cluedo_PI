@@ -74,6 +74,9 @@ public class Main {
 
                     System.out.println("Nueva Partida");
                     j = new Jugador(nombre, Habitacion.habitaciones[0]);
+                    inicio_juego();
+                    System.out.println("Empieza el juego: sala oscura.");
+                    pausa(1000);
                     break;
 
 
@@ -107,6 +110,8 @@ public class Main {
                                 .orElse(todas[0]);
 
                         j = new Jugador(dg.getNombreJugador(), salaActual);
+                        j.inventario = Guardado.leerInventario();
+                        j.grabadora = Guardado.leerGrabadora();
 
 
 
@@ -120,10 +125,9 @@ public class Main {
 
 
 
-            inicio_juego();
 
-        System.out.println("Empieza el juego: sala oscura.");
-        pausa(1000);
+
+
         boolean apagada = true;
 
         while (apagada) {
