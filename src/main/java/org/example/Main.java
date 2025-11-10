@@ -60,7 +60,7 @@ public class Main {
         } while (!Usuario.validarUsuario(nombre, contrasena));
 
 
-
+        boolean cargado = false;
         String opcion_cargar = "";
         do {
             System.out.println("-- Carga Partida --");
@@ -81,7 +81,7 @@ public class Main {
 
 
                 case "2":
-
+                    cargado = true;
                     File fichero = new File("guardado");
                     if (!fichero.exists()) {
                         System.out.println("No existen partidas guardadas.");
@@ -130,7 +130,7 @@ public class Main {
 
         boolean apagada = true;
 
-        while (apagada) {
+        while (apagada && !cargado) {
             System.out.println("\nelige una opción:");
             System.out.println("1 - buscar alrededor del escritorio");
             System.out.println("2 - inspeccionar el mueble cercano");
