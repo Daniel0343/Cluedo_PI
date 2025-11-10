@@ -213,7 +213,7 @@ public class Estudio extends Habitacion {
                                     System.out.println("Según la policia el " + arma + " no fue la causa de la muerte");
                                 }
 
-                                Main.finalJuego(nombre,j.grabadora,j.inventario, asesino_boolean,arma_boolean,lugar_boolean);
+                                Main.finalJuego(j.getNombre(),j.grabadora,j.inventario, asesino_boolean,arma_boolean,lugar_boolean);
                                 return true;
 
 

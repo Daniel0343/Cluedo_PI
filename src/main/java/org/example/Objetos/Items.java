@@ -1,6 +1,6 @@
 package org.example.Objetos;
 
-public abstract class Items {
+public class Items {
     private String nombre;
     private String descripcion;
     private Tipo tipo;

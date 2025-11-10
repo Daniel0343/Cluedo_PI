@@ -3,6 +3,7 @@ package org.example.Salas;
 import org.example.Dialogos.Grabadora;
 import org.example.Escaner;
 import org.example.Jugador;
+import org.example.Objetos.Arma;
 import org.example.Objetos.Objeto;
 import org.example.Pausa;
 import org.example.Personajes.Personaje;
@@ -97,6 +98,8 @@ public class SalaBillar extends Habitacion{
 
                 Pausa.esperar(1000);
 
+                break;
+
 
             case 3:
 
@@ -112,6 +115,8 @@ public class SalaBillar extends Habitacion{
                 if (Escaner.sn()){
                     if (!j.inventario.contieneItem("Veneno")){
                         j.inventario.agregarItem(new Objeto("Veneno"));
+                        j.grabadora.addDialogo(new Arma("Veneno").getDialogo());
+                        j.grabadora.addDialogo(new Arma("Veneno").getDialogo_lupa());
                         System.out.println("Has cogido el veneno y lo guardas en tu inventario.");
                     }else {
                         System.out.println("Ya tienes el veneno.");
@@ -134,6 +139,8 @@ public class SalaBillar extends Habitacion{
                 if (Escaner.sn()){
                     if (!j.inventario.contieneItem("Cuchillo")){
                         j.inventario.agregarItem(new Objeto("Cuchillo"));
+                        j.grabadora.addDialogo(new Arma("Cuchillo").getDialogo());
+                        j.grabadora.addDialogo(new Arma("Cuchillo").getDialogo_lupa());
                         System.out.println("Has cogido el cuchillo y te lo guardas en el inventario");
                     } else {
                         System.out.println("Ya tienes el cuchillo.");

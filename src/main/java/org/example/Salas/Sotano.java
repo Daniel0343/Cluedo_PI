@@ -3,6 +3,7 @@ package org.example.Salas;
 import org.example.Dialogos.Grabadora;
 import org.example.Escaner;
 import org.example.Jugador;
+import org.example.Objetos.Arma;
 import org.example.Objetos.Objeto;
 import org.example.Pausa;
 import org.example.Personajes.Personaje;
@@ -69,7 +70,7 @@ public class Sotano extends Habitacion{
                 Pausa.esperar(2000);
                 g.addDialogo(p.getDialogo_lupa());
                 System.out.println(p.getDialogo_lupa());
-
+                    break;
             case 2:
 
 
@@ -97,6 +98,8 @@ public class Sotano extends Habitacion{
                 g.addDialogo(p_a.getDialogo_lupa());
                 System.out.println(p_a.getDialogo_lupa());
 
+                break;
+
             case 3:
 
                 System.out.println("A la esquina del sótano, ves una extraña caja de herramientas");
@@ -110,6 +113,8 @@ public class Sotano extends Habitacion{
                 if (Escaner.sn()){
                     if (!j.inventario.contieneItem("Tubería")){
                         j.inventario.agregarItem(new Objeto("Tubería"));
+                        j.grabadora.addDialogo(new Arma("Tubería").getDialogo());
+                        j.grabadora.addDialogo(new Arma("Tubería").getDialogo_lupa());
                         Pausa.esperar(1000);
                         System.out.println("Has cogido la Tubería");
                     }else {
@@ -118,7 +123,7 @@ public class Sotano extends Habitacion{
                     }
 
                 }
-
+                break;
             case 4:
 
                 System.out.println("En la otra esquina del, hay un hueco muy oscuro y una mesa bastante alta");
@@ -132,6 +137,8 @@ public class Sotano extends Habitacion{
                 if (Escaner.sn()){
                     if (!j.inventario.contieneItem("Cuerda")){
                         j.inventario.agregarItem(new Objeto("Cuerda"));
+                        j.grabadora.addDialogo(new Arma("Cuerda").getDialogo());
+                        j.grabadora.addDialogo(new Arma("Cuerda").getDialogo_lupa());
                         Pausa.esperar(1000);
                         System.out.println("Has cogido la Cuerda");
                     }else {
@@ -143,7 +150,7 @@ public class Sotano extends Habitacion{
 
 
 
-
+                break;
 
         }
 

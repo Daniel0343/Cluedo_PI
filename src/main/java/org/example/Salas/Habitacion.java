@@ -62,6 +62,7 @@ public abstract class Habitacion {
         salaBillar.accesos = new Habitacion[]{salon, cocina};
         salon.accesos = new Habitacion[]{salaBillar, invernadero};
         cocina.accesos = new Habitacion[]{salaBillar, sotano, vestibulo};
+        sotano.accesos = new Habitacion[]{cocina};
 
         habitaciones[0] = vestibulo;
         habitaciones[1] = estudio;

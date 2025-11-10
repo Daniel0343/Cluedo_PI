@@ -3,6 +3,7 @@ package org.example.Salas;
 import org.example.Dialogos.Grabadora;
 import org.example.Escaner;
 import org.example.Jugador;
+import org.example.Objetos.Arma;
 import org.example.Objetos.Objeto;
 import org.example.Pausa;
 import org.example.Personajes.Personaje;
@@ -83,6 +84,8 @@ public class Cocina extends Habitacion{
                 if (Escaner.sn()){
                     if (!j.inventario.contieneItem("Revolver")){
                         j.inventario.agregarItem(new Objeto("Revolver"));
+                        j.grabadora.addDialogo(new Arma("Revolver").getDialogo());
+                        j.grabadora.addDialogo(new Arma("Revolver").getDialogo_lupa());
                         Pausa.esperar(1000);
                         System.out.println("Has cogido el revolver con cuidado a que no dispare");
                     }else {

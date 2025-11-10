@@ -3,6 +3,7 @@ package org.example.Salas;
 import org.example.Dialogos.Grabadora;
 import org.example.Escaner;
 import org.example.Jugador;
+import org.example.Objetos.Arma;
 import org.example.Objetos.Objeto;
 import org.example.Pausa;
 import org.example.Personajes.Personaje;
@@ -37,9 +38,9 @@ public class Salon extends Habitacion{
         Scanner sc = new Scanner(System.in);
 
         Grabadora g = j.grabadora;
-        System.out.println("Hablar con Prado");
-        System.out.println("Inspeccionar retrato Dr.Black");
-        System.out.println("Inspeccionar mesita del salón");
+        System.out.println("1 - Hablar con Prado");
+        System.out.println("2 - Inspeccionar retrato Dr.Black");
+        System.out.println("3 - Inspeccionar mesita del salón");
 
         int opcion = Escaner.entero();
 
@@ -97,6 +98,8 @@ public class Salon extends Habitacion{
                     if (Escaner.sn()){
                         if (!j.inventario.contieneItem("Anillo Rojo")){
                             j.inventario.agregarItem(new Objeto("Anillo Rojo"));
+                            j.grabadora.addDialogo(new Arma("Anillo Rojo").getDialogo());
+                            j.grabadora.addDialogo(new Arma("Anillo Rojo").getDialogo_lupa());
                             System.out.println("Has cogido el Anillo Rojo y te lo guardas en el inventario");
                         } else {
                             System.out.println("Ya tienes el Anillo Rojo.");
@@ -107,6 +110,8 @@ public class Salon extends Habitacion{
                 }else {
                     System.out.println("Codigo introducido incorrecto");
                 }
+
+                break;
 
             case 3:
 
@@ -120,6 +125,8 @@ public class Salon extends Habitacion{
                 if (Escaner.sn()){
                     if (!j.inventario.contieneItem("Candelabro")){
                         j.inventario.agregarItem(new Objeto("Candelabro"));
+                        j.grabadora.addDialogo(new Arma("Candelabro").getDialogo());
+                        j.grabadora.addDialogo(new Arma("Candelabro").getDialogo_lupa());
                         System.out.println("Has cogido el Candelabro y te lo guardas en el inventario");
                     } else {
                         System.out.println("Ya tienes el Candelabro.");

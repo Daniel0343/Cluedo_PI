@@ -109,7 +109,7 @@ public class Main {
                                 .findFirst()
                                 .orElse(todas[0]);
 
-                        j = new Jugador(dg.getNombreJugador(), salaActual);
+                        j = new Jugador(nombre, salaActual);
                         j.inventario = Guardado.leerInventario();
                         j.grabadora = Guardado.leerGrabadora();
 

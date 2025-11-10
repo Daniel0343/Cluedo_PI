@@ -15,6 +15,10 @@ public class Jugador {
         this.inventario = new Inventario(); // cada jugador tiene su propio inventario
     }
 
+    public String getNombre() {
+        return nombre;
+    }
+
     private void setUbicacion(Habitacion nuevaUbi) {
         this.ubicacion = nuevaUbi;
     }
@@ -81,7 +85,12 @@ public class Jugador {
             System.out.println("La grabadora no tiene dialgos");
         } else {
 
-            grabadora.getDialogos().forEach(System.out::println);
+            grabadora.getDialogos().forEach(s -> {
+
+                System.out.println(s);
+                System.out.println();
+
+            });
 
         }
 

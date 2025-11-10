@@ -23,6 +23,7 @@ public class Inventario {
         if (!contieneItem(item.getNombre())) {
             inventario.add(item);
         }
+
     }
     public void mostrarInventario() {
         inventario.stream().forEach(System.out::println);
