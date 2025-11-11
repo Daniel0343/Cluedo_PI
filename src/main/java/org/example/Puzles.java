@@ -21,9 +21,11 @@ public class Puzles {
           String intento = "";
           boolean puzleResuelto = false;
 
+          Pausa.esperar(1000);
           System.out.println(BOLD + "\n-- PUZZLE BOLAS DEL BILLAR --" + RESET);
           System.out.println("Echando un vistazo al billar que parece bastante viejo te das cuenta que por " +
                   "debajo sobresale una parte del billar.");
+          Pausa.esperar(1000);
           System.out.println("Te acercas y te das cuenta de que es un compartimento que está cerrado con un codigo de 7 cifras.");
 
           System.out.println(BOLD + "\nHay una nota pegada al compartimento, junto a una hoja de puntuación borrosa:" + RESET);

@@ -1,13 +1,10 @@
 package org.example.Salas;
 
+import org.example.*;
 import org.example.Dialogos.Grabadora;
-import org.example.Escaner;
-import org.example.Jugador;
 import org.example.Objetos.Arma;
 import org.example.Objetos.Objeto;
-import org.example.Pausa;
 import org.example.Personajes.Personaje;
-import org.example.Puzles;
 
 public class SalaBillar extends Habitacion{
     private boolean puzzleResuelto = false;
@@ -18,7 +15,8 @@ public class SalaBillar extends Habitacion{
 
     @Override
     public Habitacion movimiento(){
-        System.out.println("Donde quieres ir?");
+        System.out.println();
+        System.out.println(Main.BOLD +"Donde quieres ir?"+Main.RESET);
         int i = 1;
         for (Habitacion habitacion : accesos){
             System.out.println(i + " - " + habitacion.nombre);
@@ -37,7 +35,7 @@ public class SalaBillar extends Habitacion{
     public boolean acciones(Jugador j) {
         Grabadora g = j.grabadora;
 
-        System.out.println("\nElige una de las opciones:");
+        System.out.println(Main.BOLD+"\nElige una de las opciones:"+Main.RESET);
         System.out.println("1 - Hablar con Orquidea");
         System.out.println("2 - Hablar con Rubio");
         System.out.println("3 - Inspeccionar Bar");
@@ -51,22 +49,22 @@ public class SalaBillar extends Habitacion{
 
             case 1:
 
-                System.out.println("A primera vista a la izquierda de la sala del billar");
+                System.out.println(Main.YELLOW+"A primera vista a la izquierda de la sala del billar"+Main.RESET);
                 Pausa.esperar(1000);
-                System.out.println("Ves a una mujer asiatica vestida de negro, con una copa en la mano");
+                System.out.println(Main.YELLOW+"Ves a una mujer asiatica vestida de negro, con una copa en la mano"+Main.RESET);
                 Pausa.esperar(1000);
-                System.out.println("Sentada en lo que parece ser un mini bar de la zona del billar");
+                System.out.println(Main.YELLOW+"Sentada en lo que parece ser un mini bar de la zona del billar"+Main.RESET);
                 Pausa.esperar(1000);
-                System.out.println("Se da la vuelta y te mira, parece confundida como si no deberias estar allí");
+                System.out.println(Main.YELLOW+"Se da la vuelta y te mira, parece confundida como si no deberias estar allí"+Main.RESET);
                 Pausa.esperar(1000);
-                System.out.println("Le preguntas que que hace aquí, y te responde:");
-
+                System.out.println(Main.YELLOW+"Le preguntas que que hace aquí, y te responde:"+Main.RESET);
+                Pausa.esperar(1000);
                 Personaje p_orquidea = new Personaje("Orquídea");
                 g.addDialogo(p_orquidea.getDialogo());
-
+                System.out.println();
                 System.out.println(p_orquidea.getDialogo());
                 Pausa.esperar(1000);
-                System.out.println("Entiendes su argumento pero le preguntas que hacía aquí cuando se produjo el apagón");
+                System.out.println(Main.YELLOW+"Entiendes su argumento pero le preguntas que hacía aquí cuando se produjo el apagón"+Main.RESET);
                 Pausa.esperar(1000);
                 System.out.println(p_orquidea.getDialogo_lupa());
                 g.addDialogo(p_orquidea.getDialogo_lupa());
@@ -77,21 +75,21 @@ public class SalaBillar extends Habitacion{
 
             case 2:
 
-
-                System.out.println("Te acercas al fondo de la sala y ves a un hombre mayor, te mira fijamente");
                 Pausa.esperar(1000);
-                System.out.println("Está apoyado en la parez fumando de una pipa, el olor esta repartido por toda la sala");
+                System.out.println(Main.YELLOW+"Te acercas al fondo de la sala y ves a un hombre mayor, te mira fijamente"+Main.RESET);
                 Pausa.esperar(1000);
-                System.out.println("Se te acerca y te dice que se llama Rubio y que es uno de los invitados");
+                System.out.println(Main.YELLOW+"Está apoyado en la parez fumando de una pipa, el olor esta repartido por toda la sala"+Main.RESET);
                 Pausa.esperar(1000);
-                System.out.println("Le preguntas que que hace aquí, y te responde:");
-
+                System.out.println(Main.YELLOW+"Se te acerca y te dice que se llama Rubio y que es uno de los invitados"+Main.RESET);
+                Pausa.esperar(1000);
+                System.out.println(Main.YELLOW+"Le preguntas que que hace aquí, y te responde:"+Main.RESET);
+                System.out.println();
                 Personaje p_rubio = new Personaje("Rubio");
                 g.addDialogo(p_rubio.getDialogo());
 
                 System.out.println(p_rubio.getDialogo());
                 Pausa.esperar(1000);
-                System.out.println("Entiendes su argumento pero le preguntas que hacía aquí cuando se produjo el apagón");
+                System.out.println(Main.YELLOW+"Entiendes su argumento pero le preguntas que hacía aquí cuando se produjo el apagón"+Main.RESET);
                 Pausa.esperar(1000);
                 System.out.println(p_rubio.getDialogo_lupa());
                 g.addDialogo(p_rubio.getDialogo_lupa());
@@ -109,14 +107,14 @@ public class SalaBillar extends Habitacion{
                 Pausa.esperar(1000);
                 System.out.println("es una botellita gris con una foto de calavera incrustada en ella");
                 Pausa.esperar(1000);
-                System.out.println("Parece veneno ¿Quieres cogerlo? (s/n)");
+                System.out.println("Parece "+Main.RED+" veneno "+Main.RESET+"¿Quieres cogerlo? (s/n)");
                 Pausa.esperar(1000);
 
                 if (Escaner.sn()){
                     if (!j.inventario.contieneItem("Veneno")){
                         j.inventario.agregarItem(new Objeto("Veneno"));
                         j.grabadora.addDialogo(new Arma("Veneno").getDialogo());
-                        System.out.println("Has cogido el veneno y lo guardas en tu inventario.");
+                        System.out.println(Main.GREEN+"Has cogido el veneno y lo guardas en tu inventario."+Main.RESET);
                     }else {
                         System.out.println("Ya tienes el veneno.");
                     }
@@ -130,7 +128,7 @@ public class SalaBillar extends Habitacion{
 
                 System.out.println("Al pasar al lado de rubio, tiene al lado una diana vieja");
                 Pausa.esperar(1000);
-                System.out.println("En el que hay un cuchillo clavado en el medio de la diana");
+                System.out.println("En el que hay un "+Main.RED+"cuchillo "+Main.RESET+" clavado en el medio de la diana");
                 Pausa.esperar(1000);
                 System.out.println("Parece ser como un cuchillo de cocina ¿Quieres cogerlo? (s/n)");
                 Pausa.esperar(1000);
@@ -139,7 +137,7 @@ public class SalaBillar extends Habitacion{
                     if (!j.inventario.contieneItem("Cuchillo")){
                         j.inventario.agregarItem(new Objeto("Cuchillo"));
                         j.grabadora.addDialogo(new Arma("Cuchillo").getDialogo());
-                        System.out.println("Has cogido el cuchillo y te lo guardas en el inventario");
+                        System.out.println(Main.GREEN+"Has cogido el cuchillo y te lo guardas en el inventario"+Main.RESET);
                     } else {
                         System.out.println("Ya tienes el cuchillo.");
                     }
@@ -158,6 +156,7 @@ public class SalaBillar extends Habitacion{
 
                 if (Puzles.puzle_billar()){
 
+                    System.out.println();
                     System.out.println("Coges la lupa");
                     Pausa.esperar(1000);
 
@@ -165,7 +164,7 @@ public class SalaBillar extends Habitacion{
 
                         if (!j.inventario.contieneItem("Lupa")){
                             j.inventario.agregarItem(new Objeto("Lupa"));
-                            System.out.println("Has cogido la lupa y lo guardas en tu inventario.");
+                            System.out.println(Main.GREEN+"Has cogido la lupa y lo guardas en tu inventario."+Main.RESET);
                         }else {
                             System.out.println("Ya tienes el Lupa.");
                         }

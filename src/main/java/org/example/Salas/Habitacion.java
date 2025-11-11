@@ -60,7 +60,7 @@ public abstract class Habitacion {
         estudio.accesos = new Habitacion[]{vestibulo, invernadero};
         invernadero.accesos = new Habitacion[]{estudio, salaBillar};
         salaBillar.accesos = new Habitacion[]{salon, cocina};
-        salon.accesos = new Habitacion[]{salaBillar, invernadero};
+        salon.accesos = new Habitacion[]{salaBillar};
         cocina.accesos = new Habitacion[]{salaBillar, sotano, vestibulo};
         sotano.accesos = new Habitacion[]{cocina};
 

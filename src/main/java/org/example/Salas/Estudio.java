@@ -18,7 +18,8 @@ public class Estudio extends Habitacion {
 
     @Override
     public Habitacion movimiento() {
-        System.out.println("¿Dónde quieres ir?");
+        System.out.println();
+        System.out.println(Main.BOLD +"Donde quieres ir?"+Main.RESET);
         int i = 1;
         for (Habitacion habitacion : accesos) {
             System.out.println(i + " - " + habitacion.nombre);
@@ -36,7 +37,7 @@ public class Estudio extends Habitacion {
 
     @Override
     public boolean acciones(Jugador j) {
-        System.out.println("\nElige una de las opciones:");
+        System.out.println(Main.BOLD+"\nElige una de las opciones:"+Main.RESET);
         System.out.println("1 - Inspeccionar armadura");
         System.out.println("2 - Inspeccionar escritorio del Sr. Black");
         System.out.println("3 - Inspeccionar chimenea");
@@ -46,8 +47,10 @@ public class Estudio extends Habitacion {
 
         switch (opcion) {
             case 1:
+                Pausa.esperar(1000);
                 System.out.println("Ves una armadura tirada en el suelo, como si alguien ha pasado coriendo y la ha tirado");
-                System.out.println("Inspeccionas la armadura detenidamente y ves una pluma blanca que sobresale un poco. ¿Quieres cogerla? (s/n)");
+                Pausa.esperar(1000);
+                System.out.println("Inspeccionas la armadura detenidamente y ves una"+ Main.BOLD+" pluma blanca "+Main.RESET +"que sobresale un poco. ¿Quieres cogerla? (s/n)");
                 if (Escaner.sn()) {
                     if (!j.inventario.contieneItem("Pluma")) {
                         j.inventario.agregarItem(new Objeto("Pluma"));
@@ -59,18 +62,24 @@ public class Estudio extends Habitacion {
                 break;
 
             case 2:
+                Pausa.esperar(1000);
                 System.out.println("Encuentras un documento legal con un retrato del Dr. Black.");
-                System.out.println("En él se lee por encima su fecha de nacimiento: 12.03.1950.");
+                Pausa.esperar(1000);
+                System.out.println("En él se lee por encima su fecha de nacimiento: "+ Main.RED+"12.03.1950."+Main.RESET);
+                Pausa.esperar(1000);
                 break;
 
             case 3:
+                Pausa.esperar(1000);
                 System.out.println("Te acercas a la chimenea. Entre las cenizas ves algo brillante.");
+                System.out.println();
                 if (j.inventario.contieneItem("Tubería")) {
+                    Pausa.esperar(1000);
                     System.out.println("Con la ayuda de la tubería alcanzas el objeto brillante. Es una llave con forma de corazón. ¿Quieres cogerla? (s/n)");
                     if (Escaner.sn()) {
                         if (!j.inventario.contieneItem("Llave corazón")) {
                             j.inventario.agregarItem(new Objeto("Llave corazón"));
-                            System.out.println("Has cogido la Llave Corazón.");
+                            System.out.println(Main.GREEN+"Has cogido la Llave Corazón."+Main.RESET);
                         } else {
                             System.out.println("Ya tienes la llave corazón.");
                         }
@@ -81,17 +90,18 @@ public class Estudio extends Habitacion {
                 break;
 
             case 4:
+                Pausa.esperar(1000);
                 System.out.println("Ves al fondo del estudio, un armario grande que parece bastante viejo");
                 Pausa.esperar(1000);
-                System.out.println("Intentas abrir el armario, pero está cerrado con una cerradura en forma de corazón.");
+                System.out.println("Intentas abrir el armario, pero está cerrado con una" +Main.RED+" cerradura en forma de corazón."+Main.RESET);
                 Pausa.esperar(1000);
                 if (j.inventario.contieneItem("Llave corazón")) {
                     System.out.println("Usas la llave corazón para abrir el armario...");
                     Pausa.esperar(1000);
-                    System.out.println("Dentro encuentras el cadáver del Dr. Black. 🕯️");
+                    System.out.println(Main.RED+"Dentro encuentras el cadáver del Dr. Black. 🕯️"+Main.RESET);
                     Pausa.esperar(1000);
 
-                    System.out.println("Encuentras en uno de sus bolsillos una carta ");
+                    System.out.println("Encuentras en uno de sus bolsillos una " +Main.RED+"carta "+Main.RESET);
                     Pausa.esperar(1000);
                     System.out.println("Quieres coger la carta? (s/n)");
 
@@ -109,9 +119,9 @@ public class Estudio extends Habitacion {
                     }
 
                     if (j.inventario.contieneItem("Lupa")) {
-
-                        System.out.println("Con la lupa examinas el cuerpo entero del Dr. Black: no hay marcas raras ni NINGUNA herida visible.");
                         Pausa.esperar(1000);
+                        System.out.println("Con la lupa examinas el cuerpo entero del Dr. Black: "+Main.BOLD+"no hay marcas raras ni NINGUNA herida visible."+Main.RESET);
+                        Pausa.esperar(2000);
 
                     }else {
                         Pausa.esperar(1000);
@@ -138,16 +148,17 @@ public class Estudio extends Habitacion {
                     String opcion_resolver = "";
                     do {
 
-
+                        Pausa.esperar(1000);
                         System.out.println("Elige una de estas opciones antes de dar tu testimonio");
                         Pausa.esperar(1000);
                         System.out.println("A la policía de quien es el ASESINO, en que LUGAR y con cual ARMA");
                         Pausa.esperar(2000);
 
-                        System.out.println("1- Inventario Completo");
-                        System.out.println("2- Buscar objeto del inventario (Si tienes lupa)");
-                        System.out.println("3- Escuchar Grabadora");
-                        System.out.println("4- Resolver el misterio(No retorno)");
+                        System.out.println();
+                        System.out.println(Main.BOLD+"1- Inventario Completo"+Main.RESET);
+                        System.out.println(Main.BOLD+"2- Buscar objeto del inventario (Si tienes lupa)"+Main.RESET);
+                        System.out.println(Main.BOLD+"3- Escuchar Grabadora"+Main.RESET);
+                        System.out.println(Main.BOLD+"4- Resolver el misterio "+Main.RED+"(No retorno)"+Main.RESET);
 
                         opcion_resolver = Escaner.string();
 
@@ -197,45 +208,55 @@ public class Estudio extends Habitacion {
                                 Boolean lugar_boolean = false;
 
                                 Pausa.esperar(1000);
+                                System.out.println();
                                 System.out.println("\nDecides llamar ya a la polcia, y a la salida de la mansion");
-                                Pausa.esperar(1000);
-                                System.out.println("te reunes con todos los sospechosos y decides revelar delante de ellos y la polcia");
-                                Pausa.esperar(1000);
+                                Pausa.esperar(2000);
+                                System.out.println("te reunes con todos los sospechosos y decides revelar delante de ellos y la policia");
+                                Pausa.esperar(2000);
                                 System.out.println("Quien es el asesino, donde ha matado al señor Black y con que arma");
-                                Pausa.esperar(1000);
+                                Pausa.esperar(2000);
                                 System.out.println("Asesino: ");
-                                Pausa.esperar(1000);
-                                System.out.println("Rubio, Mora, Amapola, Orqídea, Celeste, Prado");
+                                Pausa.esperar(2000);
+                                System.out.println(Main.BOLD+"Rubio, Mora, Amapola, Orqídea, Celeste, Prado"+Main.RESET);
                                 Pausa.esperar(1000);
                                 String asesino = Escaner.string();
 
                                 if (asesino.matches("Celeste")){
+                                    System.out.println();
                                     System.out.println("Parece que has dado en el clavo");
+                                    System.out.println(Main.MAGENTA+"+500 pts"+Main.RESET);
                                     asesino_boolean = true;
 
                                 }else {
+                                    Pausa.esperar(1000);
                                     System.out.println("El sospechoso "+asesino+ " te mira con preocupación cuando se lo lleva la policia");
                                 }
                                 Pausa.esperar(1000);
-                                System.out.println("Vestíbulo, Invernadero, Estudio, Sótano, Salón, Cocina, Billar");
+                                System.out.println(Main.BOLD+"Vestíbulo, Invernadero, Estudio, Sótano, Salón, Cocina, Billar"+Main.RESET);
                                 Pausa.esperar(1000);
                                 System.out.println("Lugar del asesinato: ");
                                 Pausa.esperar(1000);
                                 String lugar = Escaner.string();
 
                                 if (lugar.matches("Invernadero")){
-                                    System.out.println("SR Black fue verdaderamente asesesinado en el invernadero y arrastrado hacia el estudio");
+                                    Pausa.esperar(1000);
+                                    System.out.println("SR Black fue verdaderamente asesinado en el invernadero y arrastrado hacia el estudio");
+                                    System.out.println(Main.MAGENTA+"+500 pts"+Main.RESET);
                                     lugar_boolean = true;
                                 }else {
+                                    Pausa.esperar(1000);
                                     System.out.println("Solo has confundido más a las autoridades con el lugar: " + lugar);
                                 }
-
-                                System.out.println("Candelabro, Cuchillo, Revolver, Cuerda, Veneno,Tuberia");
+                                Pausa.esperar(1000);
+                                System.out.println(Main.BOLD+"Candelabro, Cuchillo, Revolver, Cuerda, Veneno,Tuberia"+Main.RESET);
+                                Pausa.esperar(1000);
                                 System.out.println("Y con cual arma: ");
                                 String arma = Escaner.string();
 
                                 if (arma.matches("Cuerda")){
+                                    Pausa.esperar(1000);
                                     System.out.println("La cuerda fue una prueba esencial para resolver este misterio");
+                                    System.out.println(Main.MAGENTA+"+500 pts"+Main.RESET);
                                     arma_boolean = true;
                                 } else {
                                     System.out.println("Según la policia el " + arma + " no fue la causa de la muerte");

@@ -1,10 +1,7 @@
 package org.example.Salas;
 
-import org.example.Escaner;
-import org.example.Jugador;
+import org.example.*;
 import org.example.Objetos.Objeto;
-import org.example.Pausa;
-import org.example.Puzles;
 
 public class Invernadero extends Habitacion {
     private boolean puzzleResuelto = false;
@@ -15,7 +12,8 @@ public class Invernadero extends Habitacion {
 
     @Override
     public Habitacion movimiento() {
-        System.out.println("¿Dónde quieres ir?");
+        System.out.println();
+        System.out.println(Main.BOLD +"Donde quieres ir?"+Main.RESET);
         int i = 1;
         for (Habitacion habitacion : accesos) {
             if (habitacion.nombre.equals("Sala del Billar") && !SalaBillar.abierta) {
@@ -33,10 +31,12 @@ public class Invernadero extends Habitacion {
             Habitacion destino = accesos[opcion - 1];
 
             if (destino.nombre.equals("Sala del Billar") && !SalaBillar.abierta) {
+                Pausa.esperar(1000);
                 System.out.println("No puedes abrir esta puerta, parece que está cerrada.");
                 return this;
             }
             if (destino.nombre.equals("Cocina") && !Cocina.abierta) {
+                Pausa.esperar(1000);
                 System.out.println("Parece que hay una trampilla cerrada. Tal vez haya un mecanismo que la desbloquee.");
                 return this;
             }
@@ -52,10 +52,12 @@ public class Invernadero extends Habitacion {
     @Override
     public boolean acciones(Jugador j) {
 
+        Pausa.esperar(1000);
         System.out.println("El aire se vuelve denso y húmedo, lleno del olor a tierra mojada y flores exóticas.");
+        Pausa.esperar(1000);
         System.out.println("La luz de la luna apenas se filtra por el techo de cristal. Notas un rastro de tierra que no pertenece a las macetas.\n");
 
-        System.out.println("Elige una de las opciones:");
+        System.out.println(Main.BOLD+"Elige una de las opciones:"+Main.RESET);
         System.out.println("1 - Inspeccionar la alfombra");
         System.out.println("2 - Resolver el puzzle de las plantas");
         System.out.println("3 - Desbloquear la losa y la trampilla");
@@ -70,7 +72,8 @@ public class Invernadero extends Habitacion {
                     System.out.println("Entre las marcas, encuentras una pequeña llave con forma de círculo. ¿Quieres cogerla? (s/n)");
                     if (Escaner.sn()) {
                         j.inventario.agregarItem(new Objeto("Llave circular"));
-                        System.out.println("Has añadido la Llave Circular a tu inventario.");
+                        Pausa.esperar(1000);
+                        System.out.println(Main.GREEN+"Has añadido la Llave Circular a tu inventario."+Main.RESET);
                     }
                 } else {
                     System.out.println("Ya recogiste la llave con forma de círculo antes.");
@@ -78,33 +81,41 @@ public class Invernadero extends Habitacion {
                 break;
 
             case 2:
+                Pausa.esperar(1000);
                 System.out.println("Ves al fondo de el invernadero, un monton de enredaderas en el suelo");
                 Pausa.esperar(1000);
-                System.out.println("-- PUZZLE -- ");
+                System.out.println(Main.CYAN+"-- PUZZLE -- "+Main.RESET);
                 Pausa.esperar(1000);
 
                 if (!puzzleResuelto) {
                     if (Escaner.sn()) {
                         if (Puzles.puzzle_enredaderas()) {
                             puzzleResuelto = true;
+                            Pausa.esperar(1000);
                             System.out.println("Al activar el mecanismo con la secuencia correcta, las plantas se retraen y revelan una losa con una ranura circular.");
                         } else {
+                            Pausa.esperar(1000);
                             System.out.println("No consigues resolver el puzzle. Tal vez deberías intentarlo de nuevo más tarde.");
                         }
                     }
                 } else {
-                    System.out.println("Ya has resuelto el puzzle de las plantas. La losa con la ranura circular sigue ahí.");
+                    Pausa.esperar(1000);
+                    System.out.println(Main.YELLOW+"Ya has resuelto el puzzle de las plantas. La losa con la ranura circular sigue ahí."+Main.RESET);
                 }
                 break;
 
             case 3:
                 if (!puzzleResuelto) {
+                    Pausa.esperar(1000);
                     System.out.println("No parece haber nada que abrir por ahora. Tal vez primero debas resolver el puzzle.");
                     break;
                 }
                 if (j.inventario.contieneItem("Llave circular")) {
+                    Pausa.esperar(1000);
                     System.out.println("La Llave Circular encaja perfectamente en la losa. Al girarla, el mecanismo cede y se abre una trampilla.");
+                    Pausa.esperar(1000);
                     System.out.println("Una escalera desciende hacia un pasadizo oscuro que lleva a la cocina.");
+                    Pausa.esperar(1000);
                     Cocina.abierta = true;
 
                     boolean tieneCocina = false;

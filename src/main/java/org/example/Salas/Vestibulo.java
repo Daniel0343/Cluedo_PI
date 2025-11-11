@@ -2,6 +2,7 @@ package org.example.Salas;
 
 import org.example.Escaner;
 import org.example.Jugador;
+import org.example.Main;
 
 public class Vestibulo extends Habitacion{
 
@@ -11,7 +12,8 @@ public class Vestibulo extends Habitacion{
 
     @Override
     public Habitacion movimiento(){
-        System.out.println("Donde quieres ir? (0 para quedarse en el vestibulo)");
+        System.out.println();
+        System.out.println(Main.BOLD +"Donde quieres ir?"+Main.RESET);
         int i = 1;
         for (Habitacion habitacion : accesos){
             System.out.println(i + " - " + habitacion.nombre);

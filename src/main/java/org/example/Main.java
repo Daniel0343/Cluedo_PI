@@ -16,13 +16,13 @@ import java.util.Scanner;
 public class Main {
 
     // colores ansi para consola
-    private static final String RESET   = "\u001B[0m";
-    private static final String RED     = "\u001B[31m";
-    private static final String GREEN   = "\u001B[32m";
-    private static final String YELLOW  = "\u001B[33m";
-    private static final String MAGENTA = "\u001B[35m";
-    private static final String CYAN    = "\u001B[36m";
-    private static final String BOLD    = "\u001B[1m";
+    public static final String RESET   = "\u001B[0m";
+    public static final String RED     = "\u001B[31m";
+    public static final String GREEN   = "\u001B[32m";
+    public static final String YELLOW  = "\u001B[33m";
+    public static final String MAGENTA = "\u001B[35m";
+    public static final String CYAN    = "\u001B[36m";
+    public static final String BOLD    = "\u001B[1m";
 
     public static void main(String[] args) {
 
@@ -34,7 +34,7 @@ public class Main {
         String nombre;
         do {
 
-            System.out.println("-- Iniciar Sesión --");
+            System.out.println(CYAN+"-- Iniciar Sesión --" +RESET);
             System.out.println("Introduce tu nombre de usuario:");
             nombre = scanner.nextLine();
             System.out.println("Introduce tu contraseña: ");
@@ -63,7 +63,8 @@ public class Main {
         boolean cargado = false;
         String opcion_cargar = "";
         do {
-            System.out.println("-- Carga Partida --");
+            System.out.println();
+            System.out.println(CYAN+"-- Carga Partida --"+RESET);
             System.out.println("1. Nueva Partida");
             System.out.println("2. Cargar Partida");
             opcion_cargar = scanner.nextLine();
@@ -131,10 +132,10 @@ public class Main {
         boolean apagada = true;
 
         while (apagada && !cargado) {
-            System.out.println("\nElige una opción:");
-            System.out.println("1 - buscar alrededor del escritorio");
-            System.out.println("2 - inspeccionar el mueble cercano");
-            System.out.println("3 - avanzar hacia el fondo de la sala");
+            System.out.println(CYAN+"\nElige una opción:"+RESET);
+            System.out.println(BOLD+"1 - buscar alrededor del escritorio"+RESET);
+            System.out.println(BOLD+"2 - inspeccionar el mueble cercano"+RESET);
+            System.out.println(BOLD+"3 - avanzar hacia el fondo de la sala"+RESET);
 
             int opcion = Escaner.entero();
             switch (opcion) {
@@ -144,52 +145,55 @@ public class Main {
 
 
                     if (j.inventario.contieneItem("Linterna")) {
-                        pausa(800);
+                        pausa(1000);
                         System.out.println("Con la linterna ves una llave triangular bajo el escritorio. ¿la coges? (s/n)");
                         String eleccion = Escaner.string();
                         if (eleccion.equalsIgnoreCase("s")) {
-                            pausa(600);
+                            pausa(1000);
                             if (!j.inventario.contieneItem("Llave Triangular")){
                                 j.inventario.agregarItem(new Objeto("Llave Triangular"));
                                 Pausa.esperar(1000);
-                                System.out.println("Has cogido la llave triangular");
+                                System.out.println(Main.GREEN+"Has cogido la llave triangular"+Main.RESET);
                             }else {
                                 Pausa.esperar(1000);
                                 System.out.println("Ya tienes la Llave Triangular.");
                             }
                         }
                     }else {
+                        Pausa.esperar(1000);
                         System.out.println("Necesitas un objeto luminoso para poder verlo");
                         Pausa.esperar(1000);
                     }
                     break;
 
                 case 2:
+                    Pausa.esperar(1000);
                     System.out.println("Tocas lo que parece un mueble... abres un cajón y notas algo metálico. ¿lo coges? (s/n)");
                     if (Escaner.sn()){
                         if (!j.inventario.contieneItem("Linterna")){
                             j.inventario.agregarItem(new Objeto("Linterna"));
                             Pausa.esperar(1000);
-                            System.out.println("Has cogido la linterna");
+                            System.out.println(GREEN+"Has cogido la linterna"+RESET);
                         }else {
                             Pausa.esperar(1000);
-                            System.out.println("Ya tienes la linterna");
+                            System.out.println(GREEN+"Ya tienes la linterna"+RESET);
                         }
 
                     }
                     break;
 
                 case 3:
-                    System.out.println("te golpeas con algo grande y frío. no ves qué es.");
+                    Pausa.esperar(1000);
+                    System.out.println("Te golpeas con algo grande y frío. no ves qué es.");
                     if (j.inventario.contieneItem("Linterna")) {
-                        pausa(700);
+                        pausa(1000);
                         System.out.println("con la linterna ves un cuadro de luz cerrado con llave triangular.");
                         if (j.inventario.contieneItem("Llave Triangular")) {
-                            pausa(600);
+                            pausa(1000);
                             System.out.println("¿quieres intentar abrirlo con la llave? (s/n)");
                             String eleccion3 = Escaner.string();
                             if (eleccion3.equalsIgnoreCase("s")) {
-                                pausa(700);
+                                pausa(1000);
                                 System.out.println("abres la tapa... dentro hay una palanca. ¿quieres subirla? (s/n)");
                                 String eleccion4 = Escaner.string();
                                 if (eleccion4.equalsIgnoreCase("s")) {
@@ -244,6 +248,7 @@ public class Main {
                         ? BOLD + GREEN + nombre.toUpperCase() + RESET
                         : nombre;
 
+        Pausa.esperar(1000);
         System.out.println();
         System.out.println(CYAN + "╔════════════════════════════════════════════════════════════════════╗" + RESET);
         System.out.println(CYAN + "║" + RESET + "                       MANSIÓN TUDOR (MAPA)                        " + CYAN + " ║" + RESET);

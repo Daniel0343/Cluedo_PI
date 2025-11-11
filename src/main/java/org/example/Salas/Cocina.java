@@ -3,6 +3,7 @@ package org.example.Salas;
 import org.example.Dialogos.Grabadora;
 import org.example.Escaner;
 import org.example.Jugador;
+import org.example.Main;
 import org.example.Objetos.Arma;
 import org.example.Objetos.Objeto;
 import org.example.Pausa;
@@ -17,7 +18,8 @@ public class Cocina extends Habitacion{
 
     @Override
     public Habitacion movimiento(){
-        System.out.println("Donde quieres ir?");
+        System.out.println();
+        System.out.println(Main.BOLD +"Donde quieres ir?"+Main.RESET);
         int i = 1;
         for (Habitacion habitacion : accesos){
             System.out.println(i + " - " + habitacion.nombre);
@@ -37,7 +39,8 @@ public class Cocina extends Habitacion{
     public boolean acciones(Jugador j) {
         Grabadora g = j.grabadora;
 
-        System.out.println("\nElige una de las opciones:");
+        Pausa.esperar(1000);
+        System.out.println(Main.BOLD+"\nElige una de las opciones:"+Main.RESET);
         System.out.println("1 - Hablar con Celeste");
         System.out.println("2 - Inspeccionar utensilios colgantes");
         System.out.println("3 - Inpeccionar cuchillero de la mesa de la cocina ");
@@ -47,22 +50,23 @@ public class Cocina extends Habitacion{
         switch (opcion) {
 
             case 1:
-                System.out.println("Hay una mujer con un vestido azul con un abrigo de plumas, tomandose un té, parece ser una de las invitadas");
                 Pausa.esperar(1000);
-                System.out.println("Pareces reconocerla, es una mujer llamada Celeste que es actualmente la novia del SR Black");
+                System.out.println(Main.YELLOW+"Hay una mujer con un vestido azul con un abrigo de plumas, tomandose un té, parece ser una de las invitadas"+Main.RESET);
                 Pausa.esperar(1000);
-                System.out.println("te acercas por detras y del susto se lo tiras al suelo");
+                System.out.println(Main.YELLOW+"Pareces reconocerla, es una mujer llamada Celeste que es actualmente la novia del SR Black"+Main.RESET);
                 Pausa.esperar(1000);
-                System.out.println("Se da la vuelta y le preguntas que que hace aquí");
+                System.out.println(Main.YELLOW+"te acercas por detras y del susto se lo tiras al suelo"+Main.RESET);
+                Pausa.esperar(1000);
+                System.out.println(Main.YELLOW+"Se da la vuelta y le preguntas que que hace aquí"+Main.RESET);
                 Pausa.esperar(1000);
 
                 Personaje p = new Personaje("Celeste");
 
                 System.out.println(p.getDialogo());
-
+                Pausa.esperar(1000);
                 g.addDialogo(p.getDialogo());
                 Pausa.esperar(1000);
-                System.out.println("Entiendes su argumento pero le preguntas que hacía aquí cuando se produjo el apagón");
+                System.out.println(Main.YELLOW+"Entiendes su argumento pero le preguntas que hacía aquí cuando se produjo el apagón"+Main.RESET);
                 Pausa.esperar(1000);
                 System.out.println(p.getDialogo_lupa());
                 g.addDialogo(p.getDialogo_lupa());
@@ -77,7 +81,7 @@ public class Cocina extends Habitacion{
                 Pausa.esperar(1000);
                 System.out.println("Resulta haber un hueco entre los utensilios");
                 Pausa.esperar(1000);
-                System.out.println("!Es un revolver¡");
+                System.out.println(Main.RED+"!Es un revolver¡"+Main.RESET);
                 Pausa.esperar(1000);
                 System.out.println("Quieres coger el revolver? (s/n)");
 
@@ -86,7 +90,7 @@ public class Cocina extends Habitacion{
                         j.inventario.agregarItem(new Objeto("Revolver"));
                         j.grabadora.addDialogo(new Arma("Revolver").getDialogo());
                         Pausa.esperar(1000);
-                        System.out.println("Has cogido el revolver con cuidado a que no dispare");
+                        System.out.println(Main.GREEN+"Has cogido el revolver con cuidado a que no dispare"+Main.RESET);
                     }else {
                         Pausa.esperar(1000);
                         System.out.println("Ya tienes el revolver.");
