@@ -99,7 +99,6 @@ public class Salon extends Habitacion{
                         if (!j.inventario.contieneItem("Anillo Rojo")){
                             j.inventario.agregarItem(new Objeto("Anillo Rojo"));
                             j.grabadora.addDialogo(new Arma("Anillo Rojo").getDialogo());
-                            j.grabadora.addDialogo(new Arma("Anillo Rojo").getDialogo_lupa());
                             System.out.println("Has cogido el Anillo Rojo y te lo guardas en el inventario");
                         } else {
                             System.out.println("Ya tienes el Anillo Rojo.");
@@ -126,7 +125,6 @@ public class Salon extends Habitacion{
                     if (!j.inventario.contieneItem("Candelabro")){
                         j.inventario.agregarItem(new Objeto("Candelabro"));
                         j.grabadora.addDialogo(new Arma("Candelabro").getDialogo());
-                        j.grabadora.addDialogo(new Arma("Candelabro").getDialogo_lupa());
                         System.out.println("Has cogido el Candelabro y te lo guardas en el inventario");
                     } else {
                         System.out.println("Ya tienes el Candelabro.");

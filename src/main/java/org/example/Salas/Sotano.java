@@ -114,7 +114,6 @@ public class Sotano extends Habitacion{
                     if (!j.inventario.contieneItem("Tubería")){
                         j.inventario.agregarItem(new Objeto("Tubería"));
                         j.grabadora.addDialogo(new Arma("Tubería").getDialogo());
-                        j.grabadora.addDialogo(new Arma("Tubería").getDialogo_lupa());
                         Pausa.esperar(1000);
                         System.out.println("Has cogido la Tubería");
                     }else {
@@ -138,7 +137,6 @@ public class Sotano extends Habitacion{
                     if (!j.inventario.contieneItem("Cuerda")){
                         j.inventario.agregarItem(new Objeto("Cuerda"));
                         j.grabadora.addDialogo(new Arma("Cuerda").getDialogo());
-                        j.grabadora.addDialogo(new Arma("Cuerda").getDialogo_lupa());
                         Pausa.esperar(1000);
                         System.out.println("Has cogido la Cuerda");
                     }else {

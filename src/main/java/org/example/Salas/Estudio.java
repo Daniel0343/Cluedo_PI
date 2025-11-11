@@ -1,6 +1,7 @@
 package org.example.Salas;
 
 import org.example.*;
+import org.example.Objetos.Arma;
 import org.example.Objetos.Objeto;
 
 public class Estudio extends Habitacion {
@@ -117,8 +118,19 @@ public class Estudio extends Habitacion {
                     Pausa.esperar(1000);
                     System.out.println("Y piensas que ya tienes que dar por acabado el caso para encontrar al asesino");
 
+                    if (j.inventario.contieneItem("Lupa")) {
+                        j.grabadora.addDialogo(new Arma("Revolver").getDialogo_lupa());
+                        j.grabadora.addDialogo(new Arma("Veneno").getDialogo_lupa());
+                        j.grabadora.addDialogo(new Arma("Candelabro").getDialogo_lupa());
+                        j.grabadora.addDialogo(new Arma("Tubería").getDialogo_lupa());
+                        j.grabadora.addDialogo(new Arma("Cuerda").getDialogo_lupa());
+                        j.grabadora.addDialogo(new Arma("Cuchillo").getDialogo_lupa());
+
+                    }
+
                     String opcion_resolver = "";
                     do {
+
 
                         System.out.println("Elige una de estas opciones antes de dar tu testimonio");
                         Pausa.esperar(1000);
