@@ -1,8 +1,15 @@
 package org.example.Salas;
 
 import org.example.*;
+import org.example.Dialogos.Dialogo;
+import org.example.Dialogos.Dialogos;
+import org.example.Dialogos.Grabadora;
+import org.example.Dialogos.TipoDialogo;
 import org.example.Objetos.Arma;
 import org.example.Objetos.Objeto;
+import org.example.Objetos.Tipo;
+
+import java.util.Objects;
 
 public class Estudio extends Habitacion {
     public Estudio(String nombre) {
@@ -103,7 +110,7 @@ public class Estudio extends Habitacion {
 
                     if (j.inventario.contieneItem("Lupa")) {
 
-                        System.out.println("Con la lupa examinas el cuello del Dr. Black: no hay marcas raras ni NINGUNA herida visible.");
+                        System.out.println("Con la lupa examinas el cuerpo entero del Dr. Black: no hay marcas raras ni NINGUNA herida visible.");
                         Pausa.esperar(1000);
 
                     }else {
@@ -138,7 +145,7 @@ public class Estudio extends Habitacion {
                         Pausa.esperar(2000);
 
                         System.out.println("1- Inventario Completo");
-                        System.out.println("2- Buscar objeto del inventario");
+                        System.out.println("2- Buscar objeto del inventario (Si tienes lupa)");
                         System.out.println("3- Escuchar Grabadora");
                         System.out.println("4- Resolver el misterio(No retorno)");
 
@@ -160,9 +167,18 @@ public class Estudio extends Habitacion {
 
                                 if (j.inventario.contieneItem(objeto)) {
                                     System.out.println(new Objeto(objeto).getDescripcion());
+                                    if (j.inventario.contieneItem("Lupa")) {
+                                        if (Dialogos.getDialogos().stream().filter(d -> d.getTipo() == TipoDialogo.ARMA && d.getNombre().equals(objeto)).count() > 0) {
+                                            String d_lupa = Dialogos.getDialogos().stream().filter(o -> o.getNombre().equals(objeto)).findFirst().get().getDialogo_lupa();
+                                            System.out.println(d_lupa);
+                                            System.out.println();
+                                            Pausa.esperar(1000);
+                                        }
+
+                                    }
 
                                 }else {
-                                    System.out.println("Ese objeto no existe");
+                                    System.out.println("Ese objeto no existe en el inventario");
                                 }
 
                                 break;

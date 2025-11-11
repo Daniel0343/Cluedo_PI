@@ -12,7 +12,7 @@ public class Puntuaciones {
             System.out.printf("%-5s %-20s %-10s\n", "id", "nombre", "puntos");
             System.out.println("-------------------------------------------");
             while (resultSet.next()) {
-                System.out.printf("%-5d %-10s %-8d \n", resultSet.getInt(1), resultSet.getString(2), resultSet.getInt(3));
+                System.out.printf("%-5d %-10s %-17d \n", resultSet.getInt(1), resultSet.getString(2), resultSet.getInt(3));
             }
             statement.close();
         } catch (SQLException e) {

@@ -28,4 +28,14 @@ public class Inventario {
     public void mostrarInventario() {
         inventario.stream().forEach(System.out::println);
     }
+
+    public String mostrarObjetoNombre(String nombre) {
+        if (contieneItem(nombre)) {
+
+            return nombre;
+        }else {
+            return "No se encontro el objeto";
+        }
+
+    }
 }
