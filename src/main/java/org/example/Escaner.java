@@ -16,7 +16,7 @@ public class Escaner {
         String opcion;
         do{
             opcion = scanner.nextLine();
-            if(opcion.matches("\\d+")){
+            if(!opcion.matches("\\d+")){
                 System.out.print("Introduce un numero: ");
             }
         }while (!opcion.matches("\\d+"));

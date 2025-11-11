@@ -131,7 +131,7 @@ public class Main {
         boolean apagada = true;
 
         while (apagada && !cargado) {
-            System.out.println("\nelige una opción:");
+            System.out.println("\nElige una opción:");
             System.out.println("1 - buscar alrededor del escritorio");
             System.out.println("2 - inspeccionar el mueble cercano");
             System.out.println("3 - avanzar hacia el fondo de la sala");
