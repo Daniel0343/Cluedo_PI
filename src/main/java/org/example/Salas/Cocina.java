@@ -40,6 +40,7 @@ public class Cocina extends Habitacion{
         Grabadora g = j.grabadora;
 
         Pausa.esperar(1000);
+        System.out.println();
         System.out.println(Main.BOLD+"\nElige una de las opciones:"+Main.RESET);
         System.out.println("1 - Hablar con Celeste");
         System.out.println("2 - Inspeccionar utensilios colgantes");

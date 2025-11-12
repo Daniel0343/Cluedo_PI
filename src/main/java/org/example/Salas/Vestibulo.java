@@ -36,7 +36,8 @@ public class Vestibulo extends Habitacion{
     @Override
     public boolean acciones(Jugador j) {
 
-
+        System.out.println();
+        System.out.println("Ya has hecho todo lo que habría que hacer en vestibulo ");
 
         return false;
     }

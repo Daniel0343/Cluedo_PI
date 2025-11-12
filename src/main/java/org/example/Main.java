@@ -290,7 +290,7 @@ public class Main {
 
         // escena del apagón inicial
         System.out.println("   ");
-        System.out.println(RED + "Al llegar a la mansión te das cuenta de que desde el exterior parece estar todo tranquilamente," + RESET);
+        System.out.println(RED + " Al llegar a la mansión te das cuenta de que desde el exterior parece estar todo tranquilamente," + RESET);
         pausa(800);
         System.out.println(RED+ " pero de repente ves una sombra de alguien que se ve por una de las ventanas de la mansión,"+ RESET);
         pausa(800);

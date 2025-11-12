@@ -56,7 +56,8 @@ public class Invernadero extends Habitacion {
         System.out.println("El aire se vuelve denso y húmedo, lleno del olor a tierra mojada y flores exóticas.");
         Pausa.esperar(1000);
         System.out.println("La luz de la luna apenas se filtra por el techo de cristal. Notas un rastro de tierra que no pertenece a las macetas.\n");
-
+        Pausa.esperar(1000);
+        System.out.println();
         System.out.println(Main.BOLD+"Elige una de las opciones:"+Main.RESET);
         System.out.println("1 - Inspeccionar la alfombra");
         System.out.println("2 - Resolver el puzzle de las plantas");

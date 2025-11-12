@@ -37,6 +37,7 @@ public class Estudio extends Habitacion {
 
     @Override
     public boolean acciones(Jugador j) {
+
         System.out.println(Main.BOLD+"\nElige una de las opciones:"+Main.RESET);
         System.out.println("1 - Inspeccionar armadura");
         System.out.println("2 - Inspeccionar escritorio del Sr. Black");

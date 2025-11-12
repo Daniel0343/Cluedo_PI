@@ -34,7 +34,7 @@ public class SalaBillar extends Habitacion{
     @Override
     public boolean acciones(Jugador j) {
         Grabadora g = j.grabadora;
-
+        Pausa.esperar(1000);
         System.out.println(Main.BOLD+"\nElige una de las opciones:"+Main.RESET);
         System.out.println("1 - Hablar con Orquidea");
         System.out.println("2 - Hablar con Rubio");

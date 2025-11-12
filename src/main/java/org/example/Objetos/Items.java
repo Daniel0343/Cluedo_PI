@@ -31,6 +31,6 @@ public class Items {
 
     @Override
     public String toString() {
-        return nombre+" Descripcion: "+descripcion;
+        return nombre+" | Descripcion: "+descripcion;
     }
 }

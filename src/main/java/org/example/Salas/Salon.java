@@ -40,6 +40,7 @@ public class Salon extends Habitacion{
         Scanner sc = new Scanner(System.in);
 
         Grabadora g = j.grabadora;
+        Pausa.esperar(1000);
         System.out.println(Main.BOLD+"\nElige una de las opciones:"+Main.RESET);
         System.out.println("1 - Hablar con Prado");
         System.out.println("2 - Inspeccionar retrato Dr.Black");
