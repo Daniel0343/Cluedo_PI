@@ -107,7 +107,7 @@ public class SalaBillar extends Habitacion{
                 Pausa.esperar(1000);
                 System.out.println("es una botellita gris con una foto de calavera incrustada en ella");
                 Pausa.esperar(1000);
-                System.out.println("Parece "+Main.RED+" veneno "+Main.RESET+"¿Quieres cogerlo? (s/n)");
+                System.out.println("Parece"+Main.RED+" veneno "+Main.RESET+"¿Quieres cogerlo? (s/n)");
                 Pausa.esperar(1000);
 
                 if (Escaner.sn()){
@@ -157,7 +157,7 @@ public class SalaBillar extends Habitacion{
                 if (Puzles.puzle_billar()){
 
                     System.out.println();
-                    System.out.println("Coges la lupa");
+                    System.out.println("Coges la lupa? (si/no)");
                     Pausa.esperar(1000);
 
                     if (Escaner.sn()){

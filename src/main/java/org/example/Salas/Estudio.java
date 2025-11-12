@@ -109,7 +109,7 @@ public class Estudio extends Habitacion {
                         if (!j.inventario.contieneItem("Carta amapola")){
                             j.inventario.agregarItem(new Objeto("Carta amapola"));
                             Pausa.esperar(1000);
-                            System.out.println("Has cogido la carta de amapola");
+                            System.out.println(Main.GREEN+"Has cogido la carta de amapola"+Main.RESET);
 
                         }else {
                             Pausa.esperar(1000);
@@ -165,13 +165,14 @@ public class Estudio extends Habitacion {
                         switch (opcion_resolver) {
 
                             case "1":
-
+                                Pausa.esperar(1000);
                                 j.mostrarInventario();
                                 break;
 
                             case "2":
-
+                                Pausa.esperar(1000);
                                 System.out.println("Que objeto del inventario quieres ver? ");
+                                Pausa.esperar(1000);
                                 j.mostrarInventario();
 
                                 String objeto =  Escaner.string();
