@@ -25,7 +25,7 @@ public class Jugador {
 
     public boolean acciones() {
 
-        Main.mostrarMapa(ubicacion.getNombre());
+
         Pausa.esperar(1000);
         System.out.println("¿Qué quieres hacer en " + ubicacion.getNombre() + "?");
         System.out.println("1 - Acciones en la habitación");
@@ -43,6 +43,7 @@ public class Jugador {
 
             case 2:
                 setUbicacion(ubicacion.movimiento());
+                Main.mostrarMapa(ubicacion.getNombre());
                 break;
 
             case 3:

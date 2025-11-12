@@ -86,6 +86,7 @@ public class Invernadero extends Habitacion {
                 Pausa.esperar(1000);
                 System.out.println(Main.CYAN+"-- PUZZLE -- "+Main.RESET);
                 Pausa.esperar(1000);
+                System.out.println("¿Quieres intentar resolver el puzzle de las plantas? (s/n)");
 
                 if (!puzzleResuelto) {
                     if (Escaner.sn()) {

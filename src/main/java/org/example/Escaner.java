@@ -27,7 +27,6 @@ public class Escaner {
     public static boolean sn () {
         String eleccion = "";
         do {
-            System.out.print("(s/n)");
             eleccion = Escaner.string();
             if (eleccion.equals("n") || eleccion.equals("s")) {
                 if (eleccion.equals("s")) {
